@@ -1,23 +1,74 @@
 import java.util.Scanner;
 import java.util.Arrays;
-import java.util.NoSuchElementException;
-interface Graph  {
+/**
+ * Interface for graph.
+ */
+interface Graph {
+	/**
+	 * Vertices variable.
+	 *
+	 * @return     { description_of_the_return_value }
+	 */
     public int V();
+    /**
+     * Edge variable.
+     *
+     * @return     { description_of_the_return_value }
+     */
     public int E();
+    /**
+     * Adds an edge.
+     *
+     * @param      v     { parameter_description }
+     * @param      w     { parameter_description }
+     */
     public void addEdge(int v, int w);
+    /**
+     * { iterable function }
+     *
+     * @param      v     { parameter_description }
+     *
+     * @return     { adjacent vertices are returned }
+     */
     public Iterable<Integer> adj(int v);
+    /**
+     * Determines if it has edge.
+     *
+     * @param      v     { parameter_description }
+     * @param      w     { parameter_description }
+     *
+     * @return     True if has edge, False otherwise.
+     */
     public boolean hasEdge(int v, int w);
 }
-
-class AdjacentList {
-    private static final String NEWLINE = System.getProperty("line.separator");
-
-    private final int V;
+/**
+ * Class for graph form.
+ */
+class GraphForm implements Graph {
+	/**
+	 * variable for vertices.
+	 */
+	private int V;
+	/**
+	 * variable for edges.
+	 */
     private int E;
+    /**
+     * for bag.
+     */
     private Bag<Integer>[] adj;
+    /**
+     * this is a constructor.
+     */
+    protected GraphForm() {
 
-    public AdjacentList(int V) {
-        if (V < 0) throw new IllegalArgumentException("Number of vertices must be nonnegative");
+    }
+    /**
+     * forms the graph .
+     *
+     * @param      V     { parameter_description }
+     */
+    public GraphForm(int V) {
         this.V = V;
         this.E = 0;
         adj = (Bag<Integer>[]) new Bag[V];
@@ -25,84 +76,165 @@ class AdjacentList {
             adj[v] = new Bag<Integer>();
         }
     }
-
+	/**
+     * Returns the number of edges in this graph.
+     *
+     * @return the number of edges in this graph
+     */
     public int V() {
         return V;
     }
 
+    /**
+     * Returns the number of edges in this graph.
+     *
+     * @return the number of edges in this graph
+     */
     public int E() {
         return E;
     }
-
-    public void addEdge(int v, int w) {
-        validateVertex(v);
-        validateVertex(w);
-        E++;
+    /**
+     * Adds an edge.
+     *
+     * @param      v     { parameter_description }
+     * @param      w     { parameter_description }
+     */
+    public void addEdge(final int v, final int w) {
+    	if (v == w) {
+        	return;
+        }
+		if (!hasEdge(v,w)) {
+            E++;
+            
+        }
         adj[v].add(w);
         adj[w].add(v);
     }
-
-    private void validateVertex(int v) {
-        if (v < 0 || v >= V)
-            throw new IllegalArgumentException("vertex " + v + " is not between 0 and " + (V-1));
-    }
-
-    public Iterable<Integer> adj(int v) {
-        validateVertex(v);
+    /**
+     * { iterable function }
+     *
+     * @param      v     { parameter_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
+    public Iterable<Integer> adj(final int v) {
         return adj[v];
     }
+	/**
+	 * Determines if it has edge.
+	 *
+	 * @param      v     { parameter_description }
+	 * @param      w     { parameter_description }
+	 *
+	 * @return     True if has edge, False otherwise.
+	 */
+	public boolean hasEdge(final int v, final int w) {
+		for(int k : adj[v]) {
+				if (k == w) {
+					return true;
+				}
+		}
+		return false;
+    }
+    /**.
+     * To display the list.
+     *
+     * @param      v2          { parameter_description }
+     * @param      e2          { parameter_description }
+     * @param      tokens     The tokens
+     *
+     * @throws     Exception  { exception_description }
+     */
+    public void listdisplay(final int v2, final int e2, final String[] tokens) throws Exception {
+    	if (e2 <= 1 && v2 <= 1) {
+    		System.out.println(V() + " vertices" + ", " + E() + " edges");
+    		throw new Exception("No edges");
+    	} else {
+    		System.out.println(V() + " vertices" + ", " + E() + " edges");
+    		for (int i = 0; i < tokens.length; i++) {
+			String type = "";
+			type = tokens[i] + ": ";
+			for (int k : adj(i)) {
+				type = type + tokens[k] + " ";
+			}
+			System.out.println(type);
+			}
+    	}
+    }
 
-    public String toString() {
-        StringBuilder s = new StringBuilder();
-        s.append(V + " vertices, " + E + " edges " + NEWLINE);
-        for (int v = 0; v < V; v++) {
-            s.append(v + ": ");
-            for (int w : adj[v]) {
-                s.append(w + " ");
-            }
-            s.append(NEWLINE);
-        }
-        return s.toString();
+    /**
+     * to display the matrix.
+     *
+     * @param      v1          { parameter_description }
+     * @param      e1          { parameter_description }
+     *
+     * @throws     Exception  { exception_description }
+     */
+    public void matrixdisplay(final int v1, final int e1) throws Exception {
+    	if (e1 <= 1 && v1 <= 1) {
+    		System.out.println(V() + " vertices" + ", " + E() + " edges");
+    		throw new Exception("No edges");
+    	} else {
+    		System.out.println(V() + " vertices" + ", " + E() + " edges");
+    		int[][] disp = new int[V][V];
+    		for (int i = 0; i  < V; i++) {
+    			for (int j = 0; j < V; j++) {
+    				if (hasEdge(i, j)) {
+    					disp[i][j] = 1;
+		    		}
+    			}
+    		}
+
+    		for (int i = 0; i < V; i++) {
+    			for (int j = 0; j < V; j++) {
+    				System.out.print(disp[i][j] + " ");
+    			}
+    			System.out.println();
+    		}
+    	}
     }
 }
 
 
-
-
-
-
-
-
-
+/**
+ * Client class.
+ */
 public final class Solution {
-	private Solution() {
-
-	}public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		String input = sc.nextLine();
-		int vertices = Integer.parseInt(sc.nextLine());
-		int edges = Integer.parseInt(sc.nextLine());
-		if(edges == 0) {
-			System.out.println("No edges");
+	/**
+	 * this is a constructor.
+	 */
+	protected Solution() {
+		//unused constructor.
+	}
+	/**
+	 * Client function.
+	 *
+	 * @param      args  The arguments
+	 */
+	public static void main(final String[] args) {
+		Scanner scan = new Scanner(System.in);
+		GraphForm graph = new GraphForm();
+		String type = scan.nextLine();
+		int vertices = Integer.parseInt(scan.nextLine());
+		int edges = Integer.parseInt(scan.nextLine());
+		String[] data = scan.nextLine().split(",");
+		graph = new GraphForm(vertices);
+		while (scan.hasNext()) {
+			String name = scan.nextLine();
+			String[] links = name.split(" ");
+			graph.addEdge(Integer.parseInt(links[0]),
+			Integer.parseInt(links[1]));
 		}
-		String[] tokens = sc.nextLine().split(",");
-		//System.out.println(Arrays.toString(tokens));
-		/*switch (input) {
+		switch (type) {
 			case "List":
-				AdjacentList al = new AdjacentList();
-				for(int i = 0; i < vertices; i++) {
-					String[] check = sc.nextLine().split(" ");
-				}
-				break;
-			case "Matrix":
-				MatrixList ml = new MatrixList();
-				break;
-		}*/
-		for(int i = 0; i < vertices; i++) {
-					String[] check = sc.nextLine().split(" ");
-					//System.out.println(Arrays.toString(check));
-				}
-				
-		
+			try {
+				graph.listdisplay(vertices, edges, data);
+			} catch (Exception a) {
+				System.out.println(a.getMessage());
+			}
+			break;
+			default:
+			break;
+		}
 	}
 }
