@@ -32,8 +32,9 @@ class Solution {
 		}*/
 		for(int i = 0; i < vertices; i++) {
 					String[] check = sc.nextLine().split(" ");
+					System.out.println(Arrays.toString(check));
 				}
-				//System.out.println(Arrays.toString(check));
+				
 		
 	}
 }
