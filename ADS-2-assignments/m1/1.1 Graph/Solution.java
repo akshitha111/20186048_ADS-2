@@ -47,11 +47,11 @@ class GraphForm implements Graph {
     /**
      * variable for vertices.
      */
-    private int V;
+    private int vertices;
     /**
      * variable for edges.
      */
-    private int E;
+    private int edges;
     /**
      * for bag.
      */
@@ -65,13 +65,13 @@ class GraphForm implements Graph {
     /**
      * Constructs the object.
      *
-     * @param      V1    The v 1
+     * @param      vertexOne    vertexOne.
      */
-    GraphForm(final int V1) {
-        this.V = V1;
-        this.E = 0;
-        adj = (Bag<Integer>[]) new Bag[V];
-        for (int v = 0; v < V; v++) {
+    GraphForm(final int vertexOne) {
+        this.vertices = vertexOne;
+        this.edges = 0;
+        adj = (Bag<Integer>[]) new Bag[vertices];
+        for (int v = 0; v < vertices; v++) {
             adj[v] = new Bag<Integer>();
         }
     }
@@ -81,7 +81,7 @@ class GraphForm implements Graph {
      * @return the number of edges in this graph
      */
     public int vertices() {
-        return V;
+        return vertices;
     }
 
     /**
@@ -90,7 +90,7 @@ class GraphForm implements Graph {
      * @return the number of edges in this graph
      */
     public int edges() {
-        return E;
+        return edges;
     }
     /**
      * Adds an edge.
@@ -103,7 +103,7 @@ class GraphForm implements Graph {
             return;
         }
         if (!hasEdge(v, w)) {
-            E++;
+            edges++;
         }
         adj[v].add(w);
         adj[w].add(v);
@@ -146,10 +146,12 @@ class GraphForm implements Graph {
     public void listdisplay(final int v2, final int e2,
         final String[] tokens) throws Exception {
         if (e2 <= 1 && v2 <= 1) {
-            System.out.println(vertices() + " vertices" + ", " + edges() + " edges");
+            System.out.println(vertices() + " vertices"
+            + ", " + edges() + " edges");
             throw new Exception("No edges");
         } else {
-            System.out.println(vertices() + " vertices" + ", " + edges() + " edges");
+            System.out.println(vertices() + " vertices"
+            + ", " + edges() + " edges");
             for (int i = 0; i < tokens.length; i++) {
             String type = "";
             type = tokens[i] + ": ";
@@ -171,21 +173,23 @@ class GraphForm implements Graph {
      */
     public void matrixdisplay(final int v1, final int e1) throws Exception {
         if (e1 <= 1 && v1 <= 1) {
-            System.out.println(vertices() + " vertices" + ", " + edges() + " edges");
+            System.out.println(vertices() + " vertices"
+            + ", " + edges() + " edges");
             throw new Exception("No edges");
         } else {
-            System.out.println(vertices() + " vertices" + ", " + edges() + " edges");
-            int[][] disp = new int[V][V];
-            for (int i = 0; i  < V; i++) {
-                for (int j = 0; j < V; j++) {
+            System.out.println(vertices() + " vertices" + ", "
+            + edges() + " edges");
+            int[][] disp = new int[vertices][vertices];
+            for (int i = 0; i  < vertices; i++) {
+                for (int j = 0; j < vertices; j++) {
                     if (hasEdge(i, j)) {
                         disp[i][j] = 1;
                     }
                 }
             }
 
-            for (int i = 0; i < V; i++) {
-                for (int j = 0; j < V; j++) {
+            for (int i = 0; i < vertices; i++) {
+                for (int j = 0; j < vertices; j++) {
                     System.out.print(disp[i][j] + " ");
                 }
                 System.out.println();
@@ -244,6 +248,10 @@ public final class Solution {
         }
     }
 }
+
+
+
+
 
 
 

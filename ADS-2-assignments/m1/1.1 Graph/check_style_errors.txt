@@ -35,12 +35,5 @@ Audit done.
 Checkstyle ends with 1 errors.
 Starting audit...
 [ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:0: File does not end with a newline. [NewlineAtEndOfFile]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:50:17: Name 'V' must match pattern '^[a-z][a-zA-Z0-9]*$'. [MemberName]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:54:17: Name 'E' must match pattern '^[a-z][a-zA-Z0-9]*$'. [MemberName]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:70:25: Name 'V1' must match pattern '^[a-z][a-zA-Z0-9]*$'. [ParameterName]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:149: Line is longer than 80 characters (found 85). [LineLength]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:152: Line is longer than 80 characters (found 85). [LineLength]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:174: Line is longer than 80 characters (found 85). [LineLength]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:177: Line is longer than 80 characters (found 85). [LineLength]
 Audit done.
-Checkstyle ends with 8 errors.
+Checkstyle ends with 1 errors.
