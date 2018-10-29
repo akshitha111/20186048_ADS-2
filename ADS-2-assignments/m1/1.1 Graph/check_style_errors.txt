@@ -32,7 +32,6 @@ Checkstyle ends with 28 errors.
 Starting audit...
 [ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:0: File does not end with a newline. [NewlineAtEndOfFile]
 [ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:2:8: Unused import - java.util.Arrays. [UnusedImports]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:7:1: File contains tab characters (this is the first instance). [FileTabCharacter]
 [ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:12:5: Redundant 'public' modifier. [RedundantModifier]
 [ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:12:16: Name 'V' must match pattern '^[a-z][a-zA-Z0-9]*$'. [MethodName]
 [ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:18:5: Redundant 'public' modifier. [RedundantModifier]
@@ -41,7 +40,7 @@ Starting audit...
 [ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:26: First sentence should end with a period. [JavadocStyle]
 [ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:33:5: Redundant 'public' modifier. [RedundantModifier]
 [ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:42:5: Redundant 'public' modifier. [RedundantModifier]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:51:21: Name 'V' must match pattern '^[a-z][a-zA-Z0-9]*$'. [MemberName]
+[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:51:17: Name 'V' must match pattern '^[a-z][a-zA-Z0-9]*$'. [MemberName]
 [ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:55:17: Name 'E' must match pattern '^[a-z][a-zA-Z0-9]*$'. [MemberName]
 [ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:71:5: Redundant 'public' modifier. [RedundantModifier]
 [ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:71:22: Parameter V should be final. [FinalParameters]
@@ -49,10 +48,10 @@ Starting audit...
 [ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:71:26: Name 'V' must match pattern '^[a-z][a-zA-Z0-9]*$'. [ParameterName]
 [ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:84:16: Name 'V' must match pattern '^[a-z][a-zA-Z0-9]*$'. [MethodName]
 [ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:93:16: Name 'E' must match pattern '^[a-z][a-zA-Z0-9]*$'. [MethodName]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:106:32: ',' is not followed by whitespace. [WhitespaceAfter]
+[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:106:24: ',' is not followed by whitespace. [WhitespaceAfter]
 [ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:108: Line has trailing spaces. [RegexpSingleline]
 [ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:113: First sentence should end with a period. [JavadocStyle]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:132:20: 'for' is not followed by whitespace. [WhitespaceAfter]
+[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:132:12: 'for' is not followed by whitespace. [WhitespaceAfter]
 [ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:148: Line is longer than 80 characters (found 97). [LineLength]
 Audit done.
-Checkstyle ends with 24 errors.
+Checkstyle ends with 23 errors.

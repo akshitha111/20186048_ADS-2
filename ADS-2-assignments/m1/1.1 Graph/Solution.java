@@ -4,11 +4,11 @@ import java.util.Arrays;
  * Interface for graph.
  */
 interface Graph {
-	/**
-	 * Vertices variable.
-	 *
-	 * @return     { description_of_the_return_value }
-	 */
+    /**
+     * Vertices variable.
+     *
+     * @return     { description_of_the_return_value }
+     */
     public int V();
     /**
      * Edge variable.
@@ -45,13 +45,13 @@ interface Graph {
  * Class for graph form.
  */
 class GraphForm implements Graph {
-	/**
-	 * variable for vertices.
-	 */
-	private int V;
-	/**
-	 * variable for edges.
-	 */
+    /**
+     * variable for vertices.
+     */
+    private int V;
+    /**
+     * variable for edges.
+     */
     private int E;
     /**
      * for bag.
@@ -76,7 +76,7 @@ class GraphForm implements Graph {
             adj[v] = new Bag<Integer>();
         }
     }
-	/**
+    /**
      * Returns the number of edges in this graph.
      *
      * @return the number of edges in this graph
@@ -100,10 +100,10 @@ class GraphForm implements Graph {
      * @param      w     { parameter_description }
      */
     public void addEdge(final int v, final int w) {
-    	if (v == w) {
-        	return;
+        if (v == w) {
+            return;
         }
-		if (!hasEdge(v,w)) {
+        if (!hasEdge(v,w)) {
             E++;
             
         }
@@ -120,21 +120,21 @@ class GraphForm implements Graph {
     public Iterable<Integer> adj(final int v) {
         return adj[v];
     }
-	/**
-	 * Determines if it has edge.
-	 *
-	 * @param      v     { parameter_description }
-	 * @param      w     { parameter_description }
-	 *
-	 * @return     True if has edge, False otherwise.
-	 */
-	public boolean hasEdge(final int v, final int w) {
-		for(int k : adj[v]) {
-				if (k == w) {
-					return true;
-				}
-		}
-		return false;
+    /**
+     * Determines if it has edge.
+     *
+     * @param      v     { parameter_description }
+     * @param      w     { parameter_description }
+     *
+     * @return     True if has edge, False otherwise.
+     */
+    public boolean hasEdge(final int v, final int w) {
+        for(int k : adj[v]) {
+                if (k == w) {
+                    return true;
+                }
+        }
+        return false;
     }
     /**.
      * To display the list.
@@ -146,20 +146,20 @@ class GraphForm implements Graph {
      * @throws     Exception  { exception_description }
      */
     public void listdisplay(final int v2, final int e2, final String[] tokens) throws Exception {
-    	if (e2 <= 1 && v2 <= 1) {
-    		System.out.println(V() + " vertices" + ", " + E() + " edges");
-    		throw new Exception("No edges");
-    	} else {
-    		System.out.println(V() + " vertices" + ", " + E() + " edges");
-    		for (int i = 0; i < tokens.length; i++) {
-			String type = "";
-			type = tokens[i] + ": ";
-			for (int k : adj(i)) {
-				type = type + tokens[k] + " ";
-			}
-			System.out.println(type);
-			}
-    	}
+        if (e2 <= 1 && v2 <= 1) {
+            System.out.println(V() + " vertices" + ", " + E() + " edges");
+            throw new Exception("No edges");
+        } else {
+            System.out.println(V() + " vertices" + ", " + E() + " edges");
+            for (int i = 0; i < tokens.length; i++) {
+            String type = "";
+            type = tokens[i] + ": ";
+            for (int k : adj(i)) {
+                type = type + tokens[k] + " ";
+            }
+            System.out.println(type);
+            }
+        }
     }
 
     /**
@@ -171,27 +171,27 @@ class GraphForm implements Graph {
      * @throws     Exception  { exception_description }
      */
     public void matrixdisplay(final int v1, final int e1) throws Exception {
-    	if (e1 <= 1 && v1 <= 1) {
-    		System.out.println(V() + " vertices" + ", " + E() + " edges");
-    		throw new Exception("No edges");
-    	} else {
-    		System.out.println(V() + " vertices" + ", " + E() + " edges");
-    		int[][] disp = new int[V][V];
-    		for (int i = 0; i  < V; i++) {
-    			for (int j = 0; j < V; j++) {
-    				if (hasEdge(i, j)) {
-    					disp[i][j] = 1;
-		    		}
-    			}
-    		}
+        if (e1 <= 1 && v1 <= 1) {
+            System.out.println(V() + " vertices" + ", " + E() + " edges");
+            throw new Exception("No edges");
+        } else {
+            System.out.println(V() + " vertices" + ", " + E() + " edges");
+            int[][] disp = new int[V][V];
+            for (int i = 0; i  < V; i++) {
+                for (int j = 0; j < V; j++) {
+                    if (hasEdge(i, j)) {
+                        disp[i][j] = 1;
+                    }
+                }
+            }
 
-    		for (int i = 0; i < V; i++) {
-    			for (int j = 0; j < V; j++) {
-    				System.out.print(disp[i][j] + " ");
-    			}
-    			System.out.println();
-    		}
-    	}
+            for (int i = 0; i < V; i++) {
+                for (int j = 0; j < V; j++) {
+                    System.out.print(disp[i][j] + " ");
+                }
+                System.out.println();
+            }
+        }
     }
 }
 
@@ -200,39 +200,39 @@ class GraphForm implements Graph {
  * Client class.
  */
 public final class Solution {
-	/**
-	 * this is a constructor.
-	 */
-	protected Solution() {
-		//unused constructor.
-	}
-	/**
-	 * Client function.
-	 *
-	 * @param      args  The arguments
-	 */
-	public static void main(final String[] args) {
-		Scanner scan = new Scanner(System.in);
-		GraphForm graph = new GraphForm();
-		String type = scan.nextLine();
-		int vertices = Integer.parseInt(scan.nextLine());
-		int edges = Integer.parseInt(scan.nextLine());
-		String[] data = scan.nextLine().split(",");
-		graph = new GraphForm(vertices);
-		while (scan.hasNext()) {
-			String name = scan.nextLine();
-			String[] links = name.split(" ");
-			graph.addEdge(Integer.parseInt(links[0]),
-			Integer.parseInt(links[1]));
-		}
-		switch (type) {
-			case "List":
-			try {
-				graph.listdisplay(vertices, edges, data);
-			} catch (Exception a) {
-				System.out.println(a.getMessage());
-			}
-			break;
+    /**
+     * this is a constructor.
+     */
+    protected Solution() {
+        //unused constructor.
+    }
+    /**
+     * Client function.
+     *
+     * @param      args  The arguments
+     */
+    public static void main(final String[] args) {
+        Scanner scan = new Scanner(System.in);
+        GraphForm graph = new GraphForm();
+        String type = scan.nextLine();
+        int vertices = Integer.parseInt(scan.nextLine());
+        int edges = Integer.parseInt(scan.nextLine());
+        String[] data = scan.nextLine().split(",");
+        graph = new GraphForm(vertices);
+        while (scan.hasNext()) {
+            String name = scan.nextLine();
+            String[] links = name.split(" ");
+            graph.addEdge(Integer.parseInt(links[0]),
+            Integer.parseInt(links[1]));
+        }
+        switch (type) {
+            case "List":
+            try {
+                graph.listdisplay(vertices, edges, data);
+            } catch (Exception a) {
+                System.out.println(a.getMessage());
+            }
+            break;
             case "Matrix":
             try {
                 graph.matrixdisplay(vertices, edges);
@@ -240,8 +240,11 @@ public final class Solution {
                 System.out.println(b.getMessage());
             }
             break;
-			default:
-			break;
-		}
-	}
+            default:
+            break;
+        }
+    }
 }
+
+
+
