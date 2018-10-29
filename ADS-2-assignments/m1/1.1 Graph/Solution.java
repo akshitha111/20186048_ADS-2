@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.util.Arrays;
 /**
  * Interface for graph.
  */
@@ -9,28 +8,28 @@ interface Graph {
      *
      * @return     { description_of_the_return_value }
      */
-    public int V();
+     int vertices();
     /**
      * Edge variable.
      *
      * @return     { description_of_the_return_value }
      */
-    public int E();
+    int edges();
     /**
      * Adds an edge.
      *
      * @param      v     { parameter_description }
      * @param      w     { parameter_description }
      */
-    public void addEdge(int v, int w);
+    void addEdge(int v, int w);
     /**
-     * { iterable function }
+     * { iterable function }.
      *
      * @param      v     { parameter_description }
      *
      * @return     { adjacent vertices are returned }
      */
-    public Iterable<Integer> adj(int v);
+    Iterable<Integer> adj(int v);
     /**
      * Determines if it has edge.
      *
@@ -39,7 +38,7 @@ interface Graph {
      *
      * @return     True if has edge, False otherwise.
      */
-    public boolean hasEdge(int v, int w);
+     boolean hasEdge(int v, int w);
 }
 /**
  * Class for graph form.
@@ -64,12 +63,12 @@ class GraphForm implements Graph {
 
     }
     /**
-     * forms the graph .
+     * Constructs the object.
      *
-     * @param      V     { parameter_description }
+     * @param      V1    The v 1
      */
-    public GraphForm(int V) {
-        this.V = V;
+    GraphForm(final int V1) {
+        this.V = V1;
         this.E = 0;
         adj = (Bag<Integer>[]) new Bag[V];
         for (int v = 0; v < V; v++) {
@@ -81,7 +80,7 @@ class GraphForm implements Graph {
      *
      * @return the number of edges in this graph
      */
-    public int V() {
+    public int vertices() {
         return V;
     }
 
@@ -90,7 +89,7 @@ class GraphForm implements Graph {
      *
      * @return the number of edges in this graph
      */
-    public int E() {
+    public int edges() {
         return E;
     }
     /**
@@ -103,15 +102,14 @@ class GraphForm implements Graph {
         if (v == w) {
             return;
         }
-        if (!hasEdge(v,w)) {
+        if (!hasEdge(v, w)) {
             E++;
-            
         }
         adj[v].add(w);
         adj[w].add(v);
     }
     /**
-     * { iterable function }
+     * { iterable function }.
      *
      * @param      v     { parameter_description }
      *
@@ -129,7 +127,7 @@ class GraphForm implements Graph {
      * @return     True if has edge, False otherwise.
      */
     public boolean hasEdge(final int v, final int w) {
-        for(int k : adj[v]) {
+        for (int k : adj[v]) {
                 if (k == w) {
                     return true;
                 }
@@ -145,12 +143,13 @@ class GraphForm implements Graph {
      *
      * @throws     Exception  { exception_description }
      */
-    public void listdisplay(final int v2, final int e2, final String[] tokens) throws Exception {
+    public void listdisplay(final int v2, final int e2,
+        final String[] tokens) throws Exception {
         if (e2 <= 1 && v2 <= 1) {
-            System.out.println(V() + " vertices" + ", " + E() + " edges");
+            System.out.println(vertices() + " vertices" + ", " + edges() + " edges");
             throw new Exception("No edges");
         } else {
-            System.out.println(V() + " vertices" + ", " + E() + " edges");
+            System.out.println(vertices() + " vertices" + ", " + edges() + " edges");
             for (int i = 0; i < tokens.length; i++) {
             String type = "";
             type = tokens[i] + ": ";
@@ -172,10 +171,10 @@ class GraphForm implements Graph {
      */
     public void matrixdisplay(final int v1, final int e1) throws Exception {
         if (e1 <= 1 && v1 <= 1) {
-            System.out.println(V() + " vertices" + ", " + E() + " edges");
+            System.out.println(vertices() + " vertices" + ", " + edges() + " edges");
             throw new Exception("No edges");
         } else {
-            System.out.println(V() + " vertices" + ", " + E() + " edges");
+            System.out.println(vertices() + " vertices" + ", " + edges() + " edges");
             int[][] disp = new int[V][V];
             for (int i = 0; i  < V; i++) {
                 for (int j = 0; j < V; j++) {
