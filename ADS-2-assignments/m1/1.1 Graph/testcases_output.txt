@@ -16,20 +16,7 @@ Gujarat: Delhi Haryana
 Haryana: Gujarat Delhi
 
 Your Output: 
-[Andaman and Nicobar, Andhra Pradesh, Arunachal Pradesh, Assam, Bihar, Chandigarh, Chhattisgarh, Dadra and Nagar Haveli, Daman and Diu, Delhi, Goa, Gujarat, Haryana]
-[0, 5]
-[4, 3]
-[0, 1]
-[9, 12]
-[6, 4]
-[5, 4]
-[0, 2]
-[11, 12]
-[9, 10]
-[0, 6]
-[7, 8]
-[9, 11]
-[5, 3]
+
 ----------------------------------------
 
 ########## Testcase 1: Failed ##########
@@ -50,20 +37,7 @@ Expected Output:
 0 0 0 0 0 0 0 0 0 1 0 1 0
 
 Your Output: 
-[Andaman and Nicobar, Andhra Pradesh, Arunachal Pradesh, Assam, Bihar, Chandigarh, Chhattisgarh, Dadra and Nagar Haveli, Daman and Diu, Delhi, Goa, Gujarat, Haryana]
-[0, 5]
-[4, 3]
-[0, 1]
-[9, 12]
-[6, 4]
-[5, 4]
-[0, 2]
-[11, 12]
-[9, 10]
-[0, 6]
-[7, 8]
-[9, 11]
-[5, 3]
+
 ----------------------------------------
 
 ########## Testcase 2: Failed ##########
@@ -107,43 +81,7 @@ Uttarakhand: Assam
 West Bengal: Uttar Pradesh Bihar
 
 Your Output: 
-[Andaman and Nicobar, Andhra Pradesh, Arunachal Pradesh, Assam, Bihar, Chandigarh, Chhattisgarh, Dadra and Nagar Haveli, Daman and Diu, Delhi, Goa, Gujarat, Haryana, Himachal Pradesh, Jammu and Kashmir, Jharkhand, Karnataka, Kerala, Lakshadweep, Madhya Pradesh, Maharashtra, Manipur, Meghalaya, Mizoram, Nagaland, Odisha, Puducherry, Punjab, Rajasthan, Sikkim, Tamil Nadu, Telangana, Tripura, Uttar Pradesh, Uttarakhand, West Bengal]
-[0, 5]
-[4, 3]
-[0, 1]
-[9, 12]
-[6, 4]
-[5, 4]
-[0, 2]
-[11, 12]
-[9, 10]
-[0, 6]
-[7, 8]
-[9, 11]
-[5, 3]
-[10, 5]
-[14, 3]
-[10, 1]
-[19, 12]
-[16, 4]
-[15, 4]
-[10, 2]
-[21, 12]
-[19, 10]
-[10, 6]
-[17, 8]
-[19, 11]
-[15, 3]
-[0, 15]
-[4, 13]
-[0, 11]
-[9, 22]
-[6, 14]
-[5, 14]
-[0, 12]
-[11, 22]
-[9, 20]
-[0, 16]
+
 ----------------------------------------
 
 ########## Testcase 3: Failed ##########
@@ -187,43 +125,7 @@ Expected Output:
 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0
 
 Your Output: 
-[Andaman and Nicobar, Andhra Pradesh, Arunachal Pradesh, Assam, Bihar, Chandigarh, Chhattisgarh, Dadra and Nagar Haveli, Daman and Diu, Delhi, Goa, Gujarat, Haryana, Himachal Pradesh, Jammu and Kashmir, Jharkhand, Karnataka, Kerala, Lakshadweep, Madhya Pradesh, Maharashtra, Manipur, Meghalaya, Mizoram, Nagaland, Odisha, Puducherry, Punjab, Rajasthan, Sikkim, Tamil Nadu, Telangana, Tripura, Uttar Pradesh, Uttarakhand, West Bengal]
-[0, 5]
-[4, 3]
-[0, 1]
-[9, 12]
-[6, 4]
-[5, 4]
-[0, 2]
-[11, 12]
-[9, 10]
-[0, 6]
-[7, 8]
-[9, 11]
-[5, 3]
-[10, 5]
-[14, 3]
-[10, 1]
-[19, 12]
-[16, 4]
-[15, 4]
-[10, 2]
-[21, 12]
-[19, 10]
-[10, 6]
-[17, 8]
-[19, 11]
-[15, 3]
-[0, 15]
-[4, 13]
-[0, 11]
-[9, 22]
-[6, 14]
-[5, 14]
-[0, 12]
-[11, 22]
-[9, 20]
-[0, 16]
+
 ----------------------------------------
 
 ########## Testcase 4: Failed ##########
@@ -232,8 +134,7 @@ Expected Output:
 No edges
 
 Your Output: 
-[Hyderabad]
-[0, 0]
+
 ----------------------------------------
 
 ########## Testcase 5: Failed ##########
@@ -242,8 +143,7 @@ Expected Output:
 No edges
 
 Your Output: 
-[Hyderabad]
-[0, 0]
+
 ----------------------------------------
 
 ########## Testcase 6: Failed ##########
@@ -252,7 +152,7 @@ Expected Output:
 No edges
 
 Your Output: 
-[]
+
 ----------------------------------------
 
 ########## Testcase 7: Failed ##########
@@ -261,6 +161,6 @@ Expected Output:
 No edges
 
 Your Output: 
-[]
+
 ----------------------------------------
 
