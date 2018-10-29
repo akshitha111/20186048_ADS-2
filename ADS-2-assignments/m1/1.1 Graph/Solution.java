@@ -82,6 +82,9 @@ public final class Solution {
 		String input = sc.nextLine();
 		int vertices = Integer.parseInt(sc.nextLine());
 		int edges = Integer.parseInt(sc.nextLine());
+		if(edges == 0) {
+			System.out.println("No edges");
+		}
 		String[] tokens = sc.nextLine().split(",");
 		//System.out.println(Arrays.toString(tokens));
 		/*switch (input) {

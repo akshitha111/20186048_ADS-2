@@ -82,11 +82,12 @@ Starting audit...
 [ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:80:10: '}' is not followed by whitespace. [WhitespaceAround]
 [ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:80:10: Missing a Javadoc comment. [JavadocMethod]
 [ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:80:34: Parameter args should be final. [FinalParameters]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:91: Line is longer than 80 characters (found 82). [LineLength]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:98:20: 'for' is not followed by whitespace. [WhitespaceAfter]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:99: Line is longer than 80 characters (found 82). [LineLength]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:100: Line is longer than 80 characters (found 85). [LineLength]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:102: Line has trailing spaces. [RegexpSingleline]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:103: Line has trailing spaces. [RegexpSingleline]
+[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:85:19: 'if' is not followed by whitespace. [WhitespaceAfter]
+[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:94: Line is longer than 80 characters (found 82). [LineLength]
+[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:101:20: 'for' is not followed by whitespace. [WhitespaceAfter]
+[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:102: Line is longer than 80 characters (found 82). [LineLength]
+[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:103: Line is longer than 80 characters (found 85). [LineLength]
+[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:105: Line has trailing spaces. [RegexpSingleline]
+[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m1\1.1 Graph\Solution.java:106: Line has trailing spaces. [RegexpSingleline]
 Audit done.
-Checkstyle ends with 58 errors.
+Checkstyle ends with 59 errors.
