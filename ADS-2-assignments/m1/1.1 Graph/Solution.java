@@ -233,6 +233,13 @@ public final class Solution {
 				System.out.println(a.getMessage());
 			}
 			break;
+            case "Matrix":
+            try {
+                graph.matrixdisplay(vertices, edges);
+            } catch (Exception b) {
+                System.out.println(b.getMessage());
+            }
+            break;
 			default:
 			break;
 		}
