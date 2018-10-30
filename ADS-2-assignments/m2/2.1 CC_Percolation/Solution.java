@@ -4,7 +4,7 @@ class Graph {
 	private int vertices;
 	private int edges;
 	Graph(final int vertices) {
-		matrix = new int[vertices + 2][vertices + 2];
+		matrix = new int[(vertices * vertices) + 2][(vertices * vertices) + 2];
 	}
 
 	int vertices() {
@@ -45,14 +45,16 @@ class ConnectedComponents {
 				count++;
 			}
 		}
-}
+	}
 
-public int count() {
+	public int count() {
         return count;
     }
+
     public int id(int v) {
         return id[v];
     }
+
     private void dfs(Graph g, int v) {
         marked[v] = true;
         id[v] = count;
