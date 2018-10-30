@@ -1,0 +1,192 @@
+interface Graph {
+    /**
+     * Vertices variable.
+     *
+     * @return     { description_of_the_return_value }
+     */
+     int vertices();
+    /**
+     * Edge variable.
+     *
+     * @return     { description_of_the_return_value }
+     */
+    int edges();
+    /**
+     * Adds an edge.
+     *
+     * @param      v     { parameter_description }
+     * @param      w     { parameter_description }
+     */
+    void addEdge(int v, int w);
+    /**
+     * { iterable function }.
+     *
+     * @param      v     { parameter_description }
+     *
+     * @return     { adjacent vertices are returned }
+     */
+    Iterable<Integer> adj(int v);
+    /**
+     * Determines if it has edge.
+     *
+     * @param      v     { parameter_description }
+     * @param      w     { parameter_description }
+     *
+     * @return     True if has edge, False otherwise.
+     */
+     boolean hasEdge(int v, int w);
+}
+class GraphForm implements Graph {
+    /**
+     * variable for vertices.
+     */
+    private int vertices;
+    /**
+     * variable for edges.
+     */
+    private int edges;
+    /**
+     * for bag.
+     */
+    private Bag<Integer>[] adj;
+    /**
+     * this is a constructor.
+     */
+    protected GraphForm() {
+
+    }
+    /**
+     * Constructs the object.
+     *
+     * @param      vertexOne    vertexOne.
+     */
+    GraphForm(final int vertexOne) {
+        this.vertices = vertexOne;
+        this.edges = 0;
+        adj = (Bag<Integer>[]) new Bag[vertices];
+        for (int v = 0; v < vertices; v++) {
+            adj[v] = new Bag<Integer>();
+        }
+    }
+    /**
+     * Returns the number of edges in this graph.
+     *
+     * @return the number of edges in this graph
+     */
+    public int vertices() {
+        return vertices;
+    }
+
+    /**
+     * Returns the number of edges in this graph.
+     *
+     * @return the number of edges in this graph
+     */
+    public int edges() {
+        return edges;
+    }
+    /**
+     * Adds an edge.
+     *
+     * @param      v     { parameter_description }
+     * @param      w     { parameter_description }
+     */
+    public void addEdge(final int v, final int w) {
+        if (v == w) {
+            return;
+        }
+        if (!hasEdge(v, w)) {
+            edges++;
+        }
+        adj[v].add(w);
+        adj[w].add(v);
+    }
+    /**
+     * { iterable function }.
+     *
+     * @param      v     { parameter_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
+    public Iterable<Integer> adj(final int v) {
+        return adj[v];
+    }
+    /**
+     * Determines if it has edge.
+     *
+     * @param      v     { parameter_description }
+     * @param      w     { parameter_description }
+     *
+     * @return     True if has edge, False otherwise.
+     */
+    public boolean hasEdge(final int v, final int w) {
+        for (int k : adj[v]) {
+                if (k == w) {
+                    return true;
+                }
+        }
+        return false;
+    }
+    /**.
+     * To display the list.
+     *
+     * @param      v2          { parameter_description }
+     * @param      e2          { parameter_description }
+     * @param      tokens     The tokens
+     *
+     * @throws     Exception  { exception_description }
+     */
+    public void listdisplay(final int v2, final int e2,
+        final String[] tokens) throws Exception {
+        if (e2 <= 1 && v2 <= 1) {
+            System.out.println(vertices() + " vertices"
+            + ", " + edges() + " edges");
+            throw new Exception("No edges");
+        } else {
+            System.out.println(vertices() + " vertices"
+            + ", " + edges() + " edges");
+            for (int i = 0; i < tokens.length; i++) {
+            String type = "";
+            type = tokens[i] + ": ";
+            for (int k : adj(i)) {
+                type = type + tokens[k] + " ";
+            }
+            System.out.println(type);
+            }
+        }
+    }
+
+    /**
+     * to display the matrix.
+     *
+     * @param      v1          { parameter_description }
+     * @param      e1          { parameter_description }
+     *
+     * @throws     Exception  { exception_description }
+     */
+    public void matrixdisplay(final int v1, final int e1) throws Exception {
+        if (e1 <= 1 && v1 <= 1) {
+            System.out.println(vertices() + " vertices"
+            + ", " + edges() + " edges");
+            throw new Exception("No edges");
+        } else {
+            System.out.println(vertices() + " vertices" + ", "
+            + edges() + " edges");
+            int[][] disp = new int[vertices][vertices];
+            for (int i = 0; i  < vertices; i++) {
+                for (int j = 0; j < vertices; j++) {
+                    if (hasEdge(i, j)) {
+                        disp[i][j] = 1;
+                    }
+                }
+            }
+
+            for (int i = 0; i < vertices; i++) {
+                for (int j = 0; j < vertices; j++) {
+                    System.out.print(disp[i][j] + " ");
+                }
+                System.out.println();
+            }
+        }
+    }
+}

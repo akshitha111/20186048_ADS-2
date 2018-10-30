@@ -1,0 +1,252 @@
+########## Testcase 0: Failed ##########
+Expected Output: 
+false
+
+Your Output: 
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 25
+	at Graph.hasEdge(Solution.java:21)
+	at Graph.addEdge(Solution.java:14)
+	at Solution.main(Solution.java:82)
+----------------------------------------
+
+########## Testcase 1: Failed ##########
+Expected Output: 
+false
+
+Your Output: 
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 13
+	at Graph.hasEdge(Solution.java:21)
+	at Graph.addEdge(Solution.java:14)
+	at Solution.main(Solution.java:82)
+----------------------------------------
+
+########## Testcase 2: Passed ##########
+Expected Output: 
+true
+
+Your Output: 
+true
+----------------------------------------
+
+########## Testcase 3: Failed ##########
+Expected Output: 
+false
+
+Your Output: 
+true
+----------------------------------------
+
+########## Testcase 4: Failed ##########
+Expected Output: 
+true
+
+Your Output: 
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 2
+	at Graph.hasEdge(Solution.java:21)
+	at Graph.addEdge(Solution.java:14)
+	at Solution.main(Solution.java:82)
+----------------------------------------
+
+########## Testcase 5: Failed ##########
+Expected Output: 
+false
+
+Your Output: 
+true
+----------------------------------------
+
+########## Testcase 6: Failed ##########
+Expected Output: 
+true
+
+Your Output: 
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 3
+	at Graph.hasEdge(Solution.java:21)
+	at Graph.addEdge(Solution.java:14)
+	at Solution.main(Solution.java:82)
+----------------------------------------
+
+########## Testcase 7: Failed ##########
+Expected Output: 
+true
+
+Your Output: 
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 4
+	at Graph.hasEdge(Solution.java:21)
+	at Graph.addEdge(Solution.java:14)
+	at Solution.main(Solution.java:82)
+----------------------------------------
+
+########## Testcase 8: Failed ##########
+Expected Output: 
+true
+
+Your Output: 
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 5
+	at Graph.hasEdge(Solution.java:21)
+	at Graph.addEdge(Solution.java:14)
+	at Solution.main(Solution.java:82)
+----------------------------------------
+
+########## Testcase 9: Failed ##########
+Expected Output: 
+true
+
+Your Output: 
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 6
+	at Graph.hasEdge(Solution.java:21)
+	at Graph.addEdge(Solution.java:14)
+	at Solution.main(Solution.java:82)
+----------------------------------------
+
+########## Testcase 10: Failed ##########
+Expected Output: 
+true
+
+Your Output: 
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 7
+	at Graph.hasEdge(Solution.java:21)
+	at Graph.addEdge(Solution.java:14)
+	at Solution.main(Solution.java:82)
+----------------------------------------
+
+########## Testcase 11: Failed ##########
+Expected Output: 
+true
+
+Your Output: 
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 8
+	at Graph.hasEdge(Solution.java:21)
+	at Graph.addEdge(Solution.java:14)
+	at Solution.main(Solution.java:82)
+----------------------------------------
+
+########## Testcase 12: Failed ##########
+Expected Output: 
+true
+
+Your Output: 
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 8
+	at Graph.hasEdge(Solution.java:21)
+	at Graph.addEdge(Solution.java:14)
+	at Solution.main(Solution.java:82)
+----------------------------------------
+
+########## Testcase 13: Failed ##########
+Expected Output: 
+false
+
+Your Output: 
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 13
+	at Graph.hasEdge(Solution.java:21)
+	at Graph.addEdge(Solution.java:14)
+	at Solution.main(Solution.java:82)
+----------------------------------------
+
+########## Testcase 14: Failed ##########
+Expected Output: 
+true
+
+Your Output: 
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 10
+	at Graph.hasEdge(Solution.java:21)
+	at Graph.addEdge(Solution.java:14)
+	at Solution.main(Solution.java:82)
+----------------------------------------
+
+########## Testcase 15: Failed ##########
+Expected Output: 
+false
+
+Your Output: 
+true
+----------------------------------------
+
+########## Testcase 16: Failed ##########
+Expected Output: 
+true
+
+Your Output: 
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 20
+	at Graph.hasEdge(Solution.java:21)
+	at Graph.addEdge(Solution.java:14)
+	at Solution.main(Solution.java:82)
+----------------------------------------
+
+########## Testcase 17: Failed ##########
+Expected Output: 
+true
+
+Your Output: 
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 50
+	at Graph.hasEdge(Solution.java:21)
+	at Graph.addEdge(Solution.java:14)
+	at Solution.main(Solution.java:82)
+----------------------------------------
+
+########## Testcase 18: Failed ##########
+Expected Output: 
+true
+
+Your Output: 
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 60
+	at Graph.hasEdge(Solution.java:21)
+	at Graph.addEdge(Solution.java:14)
+	at Solution.main(Solution.java:82)
+----------------------------------------
+
+########## Testcase 19: Failed ##########
+Expected Output: 
+true
+
+Your Output: 
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 47
+	at Graph.hasEdge(Solution.java:21)
+	at Graph.addEdge(Solution.java:14)
+	at Solution.main(Solution.java:82)
+----------------------------------------
+
+########## Testcase 20: Failed ##########
+Expected Output: 
+true
+
+Your Output: 
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 60
+	at Graph.hasEdge(Solution.java:21)
+	at Graph.addEdge(Solution.java:14)
+	at Solution.main(Solution.java:82)
+----------------------------------------
+
+########## Testcase 21: Failed ##########
+Expected Output: 
+true
+
+Your Output: 
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 13
+	at Graph.hasEdge(Solution.java:21)
+	at Graph.addEdge(Solution.java:14)
+	at Solution.main(Solution.java:82)
+----------------------------------------
+
+########## Testcase 22: Failed ##########
+Expected Output: 
+true
+
+Your Output: 
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 101
+	at Graph.hasEdge(Solution.java:21)
+	at Graph.addEdge(Solution.java:14)
+	at Solution.main(Solution.java:82)
+----------------------------------------
+
+########## Testcase 23: Failed ##########
+Expected Output: 
+true
+
+Your Output: 
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 98
+	at Graph.hasEdge(Solution.java:21)
+	at Graph.addEdge(Solution.java:14)
+	at Solution.main(Solution.java:82)
+----------------------------------------
+
