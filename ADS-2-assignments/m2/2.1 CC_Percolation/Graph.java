@@ -1,80 +1,36 @@
-interface Graph {
-    /**
-     * Vertices variable.
-     *
-     * @return     { description_of_the_return_value }
-     */
-     int vertices();
-    /**
-     * Edge variable.
-     *
-     * @return     { description_of_the_return_value }
-     */
-    int edges();
-    /**
-     * Adds an edge.
-     *
-     * @param      v     { parameter_description }
-     * @param      w     { parameter_description }
-     */
-    void addEdge(int v, int w);
-    /**
-     * { iterable function }.
-     *
-     * @param      v     { parameter_description }
-     *
-     * @return     { adjacent vertices are returned }
-     */
-    Iterable<Integer> adj(int v);
-    /**
-     * Determines if it has edge.
-     *
-     * @param      v     { parameter_description }
-     * @param      w     { parameter_description }
-     *
-     * @return     True if has edge, False otherwise.
-     */
-     boolean hasEdge(int v, int w);
-}
-class GraphForm implements Graph {
-    /**
-     * variable for vertices.
-     */
-    private int vertices;
-    /**
-     * variable for edges.
-     */
-    private int edges;
-    /**
-     * for bag.
-     */
-    private Bag<Integer>[] adj;
-    /**
-     * this is a constructor.
-     */
-    protected GraphForm() {
+import java.util.NoSuchElementException;
 
-    }
+public class Graph {
+    private static final String NEWLINE = System.getProperty("line.separator");
+
+    private final int V;
+    private int E;
+    private Bag<Integer>[] adj;
+
     /**
-     * Constructs the object.
+     * Initializes an empty graph with {@code V} vertices and 0 edges.
+     * param V the number of vertices
      *
-     * @param      vertexOne    vertexOne.
+     * @param  V number of vertices
+     * @throws IllegalArgumentException if {@code V < 0}
      */
-    GraphForm(final int vertexOne) {
-        this.vertices = vertexOne;
-        this.edges = 0;
-        adj = (Bag<Integer>[]) new Bag[vertices];
-        for (int v = 0; v < vertices; v++) {
+    public Graph(int V) {
+        if (V < 0) throw new IllegalArgumentException("Number of vertices must be nonnegative");
+        this.V = V;
+        this.E = 0;
+        adj = (Bag<Integer>[]) new Bag[V];
+        for (int v = 0; v < V; v++) {
             adj[v] = new Bag<Integer>();
         }
     }
+
     /**
-     * Returns the number of edges in this graph.
+     * Returns the number of vertices in this graph.
      *
-     * @return the number of edges in this graph
+     * @return the number of vertices in this graph
      */
-    public int vertices() {
-        return vertices;
+    public int V() {
+        return V;
     }
 
     /**
@@ -82,35 +38,31 @@ class GraphForm implements Graph {
      *
      * @return the number of edges in this graph
      */
-    public int edges() {
-        return edges;
+    public int E() {
+        return E;
     }
+
+    // throw an IllegalArgumentException unless {@code 0 <= v < V}
+    private void validateVertex(int v) {
+        if (v < 0 || v >= V)
+            throw new IllegalArgumentException("vertex " + v + " is not between 0 and " + (V - 1));
+    }
+
     /**
-     * Adds an edge.
+     * Adds the undirected edge v-w to this graph.
      *
-     * @param      v     { parameter_description }
-     * @param      w     { parameter_description }
+     * @param  v one vertex in the edge
+     * @param  w the other vertex in the edge
+     * @throws IllegalArgumentException unless both {@code 0 <= v < V} and {@code 0 <= w < V}
      */
-    public void addEdge(final int v, final int w) {
-        if (v == w) {
-            return;
-        }
-        if (!hasEdge(v, w)) {
-            edges++;
-        }
+    public void addEdge(int v, int w) {
+        validateVertex(v);
+        validateVertex(w);
+        E++;
         adj[v].add(w);
         adj[w].add(v);
     }
-    /**
-     * { iterable function }.
-     *
-     * @param      v     { parameter_description }
-     *
-     * @return     { description_of_the_return_value }
-     */
-    public Iterable<Integer> adj(final int v) {
-        return adj[v];
-    }
+
     /**
      * Determines if it has edge.
      *
@@ -119,74 +71,56 @@ class GraphForm implements Graph {
      *
      * @return     True if has edge, False otherwise.
      */
-    public boolean hasEdge(final int v, final int w) {
-        for (int k : adj[v]) {
-                if (k == w) {
-                    return true;
-                }
+    public boolean hasEdge(int v, int w) {
+        for (int each : adj[w]) {
+            if (each == v) {
+                return true;
+            }
         }
         return false;
     }
-    /**.
-     * To display the list.
+
+    /**
+     * Returns the vertices adjacent to vertex {@code v}.
      *
-     * @param      v2          { parameter_description }
-     * @param      e2          { parameter_description }
-     * @param      tokens     The tokens
-     *
-     * @throws     Exception  { exception_description }
+     * @param  v the vertex
+     * @return the vertices adjacent to vertex {@code v}, as an iterable
+     * @throws IllegalArgumentException unless {@code 0 <= v < V}
      */
-    public void listdisplay(final int v2, final int e2,
-        final String[] tokens) throws Exception {
-        if (e2 <= 1 && v2 <= 1) {
-            System.out.println(vertices() + " vertices"
-            + ", " + edges() + " edges");
-            throw new Exception("No edges");
-        } else {
-            System.out.println(vertices() + " vertices"
-            + ", " + edges() + " edges");
-            for (int i = 0; i < tokens.length; i++) {
-            String type = "";
-            type = tokens[i] + ": ";
-            for (int k : adj(i)) {
-                type = type + tokens[k] + " ";
-            }
-            System.out.println(type);
-            }
-        }
+    public Iterable<Integer> adj(int v) {
+        validateVertex(v);
+        return adj[v];
     }
 
     /**
-     * to display the matrix.
+     * Returns the degree of vertex {@code v}.
      *
-     * @param      v1          { parameter_description }
-     * @param      e1          { parameter_description }
-     *
-     * @throws     Exception  { exception_description }
+     * @param  v the vertex
+     * @return the degree of vertex {@code v}
+     * @throws IllegalArgumentException unless {@code 0 <= v < V}
      */
-    public void matrixdisplay(final int v1, final int e1) throws Exception {
-        if (e1 <= 1 && v1 <= 1) {
-            System.out.println(vertices() + " vertices"
-            + ", " + edges() + " edges");
-            throw new Exception("No edges");
-        } else {
-            System.out.println(vertices() + " vertices" + ", "
-            + edges() + " edges");
-            int[][] disp = new int[vertices][vertices];
-            for (int i = 0; i  < vertices; i++) {
-                for (int j = 0; j < vertices; j++) {
-                    if (hasEdge(i, j)) {
-                        disp[i][j] = 1;
-                    }
-                }
-            }
+    public int degree(int v) {
+        validateVertex(v);
+        return adj[v].size();
+    }
 
-            for (int i = 0; i < vertices; i++) {
-                for (int j = 0; j < vertices; j++) {
-                    System.out.print(disp[i][j] + " ");
-                }
-                System.out.println();
+
+    /**
+     * Returns a string representation of this graph.
+     *
+     * @return the number of vertices <em>V</em>, followed by the number of edges <em>E</em>,
+     *         followed by the <em>V</em> adjacency lists
+     */
+    public String toString() {
+        StringBuilder s = new StringBuilder();
+        s.append(V + " vertices, " + E + " edges " + NEWLINE);
+        for (int v = 0; v < V; v++) {
+            s.append(v + ": ");
+            for (int w : adj[v]) {
+                s.append(w + " ");
             }
+            s.append(NEWLINE);
         }
+        return s.toString();
     }
 }

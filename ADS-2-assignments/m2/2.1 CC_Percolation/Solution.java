@@ -1,93 +1,171 @@
 import java.util.Scanner;
-class Graph {
-	private int[][] matrix;
-	private int vertices;
-	private int edges;
-	Graph(final int vertices) {
-		matrix = new int[(vertices * vertices) + 2][(vertices * vertices) + 2];
-	}
+/**
+ * Class for percolation.
+ */
+class Percolation {
+    /**
+     *the boolean array.
+     */
+    private boolean[] array;
+    /**
+     *object declaration.
+     */
+    private Graph graph;
+    /**
+     * variable for array size.
+     */
+    private int arraySize;
+    /**
+     * variable for size.
+     */
+    private int size;
+    /**
+     * initializing count.
+     */
+    private int count;
+    /**
+     *first variable.
+     */
+    private int first;
+    /**
+     * last variable.
+     */
+    private int last;
+    /**
+     * Constructs the object.
+     */
+    protected Percolation() {
 
-	int vertices() {
-		return vertices;
-	}
-
-	public void addEdge(final int vertexOne, final int vertexTwo) {
-		if(vertexOne != vertexTwo) {
-			if(!hasEdge(vertexOne, vertexTwo)) {
-				matrix[vertexOne][vertexTwo] = 1;
-				edges++;
-			}
-		}
-	}
-	public boolean hasEdge(final int vertexOne, final int vertexTwo) {
-		if(matrix[vertexOne][vertexTwo] == 1) {
-			return true;
-		}
-		return false;
-	}
-
-	public int[] adj(final int v) {
-		return matrix[v];
-	}
-}
-
-class ConnectedComponents {
-	private boolean[] marked;
-	private int[] id;
-	private int count;
-	ConnectedComponents(Graph g, int s) {
-		marked = new boolean[g.vertices()];
-		id = new int[g.vertices()];
-		for(int i = 0; i < g.vertices(); i++) {
-			marked[i] = false;
-			if(!marked[i]) {
-				dfs(g, i);
-				count++;
-			}
-		}
-	}
-
-	public int count() {
+    }
+    /**
+     * Constructs the object.
+     *
+     * @param n int
+     */
+    Percolation(final int n) {
+        this.arraySize = n;
+        this.size = n * n;
+        this.first = size;
+        this.last = size + 1;
+        this.count = 0;
+        graph = new Graph(size + 2);
+        array = new boolean[size];
+        for (int i = 0; i < arraySize; i++) {
+            graph.addEdge(first, i);
+            graph.addEdge(last, size - i - 1);
+        }
+    }
+    /**
+     * method to convert from two dimensional to one dimensional.
+     *
+     * @param      row   The row
+     * @param      col   The col
+     *
+     * @return  onedimensional array
+     */
+    public int toOneD(final int row, final int col) {
+        return (arraySize * (row - 1)) + (col - 1);
+    }
+    /**
+     * Connects open sites(== full site).
+     *
+     * @param      row   The row
+     * @param      col   The col
+     */
+    private void connectOpenSites(final int row, final int col) {
+        if (array[col] && !graph.hasEdge(row, col)) {
+            graph.addEdge(row, col);
+        }
+    }
+    /**
+     * method that opens the blocked site.
+     *
+     * @param      row     The row
+     * @param      col  The column
+     */
+    public void open(final int row, final int col) {
+        int index = toOneD(row, col);
+        array[index] = true;
+        count++;
+        int firstrow = index - arraySize;
+        int lastrow = index + arraySize;
+        if (arraySize == 1) {
+            graph.addEdge(first, index);
+            graph.addEdge(last, index);
+        }
+        if (lastrow < size) {         //last
+            connectOpenSites(index, lastrow);
+        }
+        if (firstrow >= 0) {              //first
+            connectOpenSites(index, firstrow);
+        }
+        if (col == 1) {                 //left
+            if (col != arraySize) {
+                connectOpenSites(index, index + 1);
+            }
+            return;
+        }
+        if (col == arraySize) {         //right
+            connectOpenSites(index, index - 1);
+            return;
+        }
+        connectOpenSites(index, index + 1);
+        connectOpenSites(index, index - 1);
+    }
+    /**
+     * Determines if open.
+     *
+     * @param      row   The row
+     * @param      col   The col
+     *
+     * @return     True if open, False otherwise.
+     */
+    public boolean isOpen(final int row, final int col) {
+        return array[toOneD(row, col)];
+    }
+    /**
+     * return number of open sites.
+     *
+     * @return count
+     */
+    public int numberOfOpenSites() {
         return count;
     }
-
-    public int id(int v) {
-        return id[v];
-    }
-
-    private void dfs(Graph g, int v) {
-        marked[v] = true;
-        id[v] = count;
-        for (int each : g.adj(v)) {
-            if (!marked[each]) {
-                dfs(g, each);
-            }
-        }
-    }
+    /**
+     * method to check whether there is a flow.
+     *
+     * @return boolean
+     */
     public boolean percolates() {
-        if (count >= 1) {
-            return false;
-        } else {
-            return true;
-        }
+        ConnectedComponents cc = new ConnectedComponents(graph);
+        return cc.connected(first, last);
     }
 }
-
-class Solution {
-
-	Solution() {
-	}
-
-	public static void main(String[] args) {
-	Scanner sc = new Scanner(System.in);
-	int size = Integer.parseInt(sc.nextLine());
-	Graph gh = new Graph(size);
-	while(sc.hasNext()) {		
-		String[] tokens = sc.nextLine().split(" ");
-		gh.addEdge(Integer.parseInt(tokens[0]), Integer.parseInt(tokens[1]));
-	    //System.out.println(gh.hasEdge(Integer.parseInt(tokens[0]), Integer.parseInt(tokens[1])));
- 	}
- 	ConnectedComponents cc = new ConnectedComponents(gh, size);
- 	System.out.println(cc.percolates());
-}
+/**
+ * Class for solution.
+ */
+public final class Solution {
+    /**
+     * Constructs the object.
+     */
+    protected Solution() {
+        //unused constructor.
+    }
+    /**
+     * Client program.
+     *
+     * @param      args  The arguments
+     */
+    public static void main(final String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int n = Integer.parseInt(scan.nextLine());
+        Percolation pobj = new Percolation(n);
+        while (scan.hasNext()) {
+            String[] tokens = scan.nextLine().split(" ");
+            pobj.open(Integer.parseInt(tokens[0]),
+                      Integer.parseInt(tokens[1]));
+        }
+        System.out.println(pobj.percolates()
+                           && pobj.numberOfOpenSites() != 0);
+    }
 }
