@@ -141,6 +141,7 @@ class Percolation {
         return cc.connected(first, last);
     }
 }
+
 /**
  * Class for solution.
  */
@@ -151,6 +152,7 @@ public final class Solution {
     protected Solution() {
         //unused constructor.
     }
+
     /**
      * Client program.
      *
@@ -169,6 +171,8 @@ public final class Solution {
                            && pobj.numberOfOpenSites() != 0);
     }
 }
+
+
 
 
 
