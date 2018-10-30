@@ -4,7 +4,7 @@ class Graph {
 	private int vertices;
 	private int edges;
 	Graph(final int vertices) {
-		matrix = new int[vertices][vertices];
+		matrix = new int[vertices + 2][vertices + 2];
 	}
 	int vertices() {
 		return vertices;
