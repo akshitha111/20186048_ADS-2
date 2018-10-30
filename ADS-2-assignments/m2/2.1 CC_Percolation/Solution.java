@@ -6,9 +6,11 @@ class Graph {
 	Graph(final int vertices) {
 		matrix = new int[vertices + 2][vertices + 2];
 	}
+
 	int vertices() {
 		return vertices;
 	}
+
 	public void addEdge(final int vertexOne, final int vertexTwo) {
 		if(vertexOne != vertexTwo) {
 			if(!hasEdge(vertexOne, vertexTwo)) {
@@ -23,6 +25,7 @@ class Graph {
 		}
 		return false;
 	}
+
 	public int[] adj(final int v) {
 		return matrix[v];
 	}
@@ -60,7 +63,7 @@ public int count() {
         }
     }
     public boolean percolates() {
-        if (count > 1) {
+        if (count >= 1) {
             return false;
         } else {
             return true;
