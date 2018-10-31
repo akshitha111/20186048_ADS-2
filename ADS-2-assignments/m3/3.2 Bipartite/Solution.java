@@ -14,7 +14,6 @@ class Solution {
 		 Bipartite b = new Bipartite(g);
         if (b.isBipartite()) {
             System.out.println("Graph is bipartite");
-            //for (int v = 0; v < dg.V(); v++) {
 	} else {
 		System.out.println("Graph is not a bipartite");
 	}

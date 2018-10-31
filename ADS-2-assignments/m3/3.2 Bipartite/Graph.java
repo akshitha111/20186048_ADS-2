@@ -5,8 +5,8 @@ import java.util.NoSuchElementException;
 public class Graph {
     private static final String NEWLINE = System.getProperty("line.separator");
 
-    private final int V;
-    private int E;
+    private final int ver;
+    private int edg;
     private Bag<Integer>[] adj;
 
     /**
@@ -16,12 +16,12 @@ public class Graph {
      * @param  V number of vertices
      * @throws IllegalArgumentException if {@code V < 0}
      */
-    public Graph(int V) {
-        if (V < 0) throw new IllegalArgumentException("Number of vertices must be nonnegative");
-        this.V = V;
-        this.E = 0;
-        adj = (Bag<Integer>[]) new Bag[V];
-        for (int v = 0; v < V; v++) {
+    public Graph(int verOne) {
+        if (verOne < 0) throw new IllegalArgumentException("Number of vertices must be nonnegative");
+        this.ver = verOne;
+        this.edg = 0;
+        adj = (Bag<Integer>[]) new Bag[verOne];
+        for (int v = 0; v < verOne; v++) {
             adj[v] = new Bag<Integer>();
         }
     }
@@ -31,8 +31,8 @@ public class Graph {
      *
      * @return the number of vertices in this graph
      */
-    public int V() {
-        return V;
+    public int vertex() {
+        return ver;
     }
 
     /**
@@ -40,14 +40,14 @@ public class Graph {
      *
      * @return the number of edges in this graph
      */
-    public int E() {
-        return E;
+    public int edges() {
+        return edg;
     }
 
     // throw an IllegalArgumentException unless {@code 0 <= v < V}
     private void validateVertex(int v) {
-        if (v < 0 || v >= V)
-            throw new IllegalArgumentException("vertex " + v + " is not between 0 and " + (V - 1));
+        if (v < 0 || v >= ver)
+            throw new IllegalArgumentException("vertex " + v + " is not between 0 and " + (ver - 1));
     }
 
     /**
@@ -60,7 +60,7 @@ public class Graph {
     public void addEdge(int v, int w) {
         validateVertex(v);
         validateVertex(w);
-        E++;
+        edg++;
         adj[v].add(w);
         adj[w].add(v);
     }
@@ -115,8 +115,8 @@ public class Graph {
      */
     public String toString() {
         StringBuilder s = new StringBuilder();
-        s.append(V + " vertices, " + E + " edges " + NEWLINE);
-        for (int v = 0; v < V; v++) {
+        s.append(ver + " vertices, " + edg + " edges " + NEWLINE);
+        for (int v = 0; v < ver; v++) {
             s.append(v + ": ");
             for (int w : adj[v]) {
                 s.append(w + " ");

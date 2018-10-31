@@ -1,42 +1,63 @@
-    public class Bipartite {
-    private boolean isBipartite;   // is the graph bipartite?
-    private boolean[] color;       // color[v] gives vertices on one side of bipartition
-    private boolean[] marked;      // marked[v] = true iff v has been visited in DFS
-    private int[] edgeTo;          // edgeTo[v] = last edge on path to v
+/**
+ * Class for bipartite.
+ */
+public class Bipartite {
+    /**
+     * { isBipartite variable }
+     */
+    private boolean isBipartite;
+    /**
+     * { color variable }
+     */
+    private boolean[] color;
+    /**
+     * { marked variable }
+     */
+    private boolean[] marked;
+    /**
+     * { edgeTo variable }
+     */
+    private int[] edgeTo;
+    /**
+     * { cycle variable }
+     */
     private Stack<Integer> cycle;
-    public Bipartite(Graph G) {
+    /**
+     * Constructs the object.
+     *
+     * @param      graph    { parameter_description }
+     */
+    public Bipartite(Graph graph) {
         isBipartite = true;
-        color  = new boolean[G.V()];
-        marked = new boolean[G.V()];
-        edgeTo = new int[G.V()];
+        color  = new boolean[graph.vertex()];
+        marked = new boolean[graph.vertex()];
+        edgeTo = new int[graph.vertex()];
 
-        for (int v = 0; v < G.V(); v++) {
+        for (int v = 0; v < graph.vertex(); v++) {
             if (!marked[v]) {
-                dfs(G, v);
+                dfs(graph, v);
             }
         }
-        assert check(G);
     }
-
-    private void dfs(Graph G, int v) { 
+    /**
+     * { function_description }
+     *
+     * @param      G     { parameter_description }
+     * @param      v     { parameter_description }
+     */
+    private void dfs(Graph g, int v) { 
         marked[v] = true;
-        for (int w : G.adj(v)) {
-
-            // short circuit if odd-length cycle found
+        for (int w : g.adj(v)) {
             if (cycle != null) return;
-
-            // found uncolored vertex, so recur
             if (!marked[w]) {
                 edgeTo[w] = v;
                 color[w] = !color[v];
-                dfs(G, w);
+                dfs(g, w);
             } 
-
-            // if v-w create an odd-length cycle, find it
             else if (color[w] == color[v]) {
                 isBipartite = false;
                 cycle = new Stack<Integer>();
-                cycle.push(w);  // don't need this unless you want to include start vertex twice
+                cycle.push(w);
                 for (int x = v; x != w; x = edgeTo[x]) {
                     cycle.push(x);
                 }
@@ -66,7 +87,6 @@
      *         is not bipartite
      */
     public boolean color(int v) {
-        validateVertex(v);
         if (!isBipartite)
             throw new UnsupportedOperationException("graph is not bipartite");
         return color[v];
@@ -85,9 +105,8 @@
     }
 
     private boolean check(Graph G) {
-        // graph is bipartite
         if (isBipartite) {
-            for (int v = 0; v < G.V(); v++) {
+            for (int v = 0; v < G.vertex(); v++) {
                 for (int w : G.adj(v)) {
                     if (color[v] == color[w]) {
                         System.err.printf("edge %d-%d with %d and %d in same side of bipartition\n", v, w, v, w);
@@ -96,10 +115,7 @@
                 }
             }
         }
-
-        // graph has an odd-length cycle
         else {
-            // verify cycle
             int first = -1, last = -1;
             for (int v : oddCycle()) {
                 if (first == -1) first = v;
@@ -112,12 +128,5 @@
         }
 
         return true;
-    }
-
-    // throw an IllegalArgumentException unless {@code 0 <= v < V}
-    private void validateVertex(int v) {
-        int V = marked.length;
-        if (v < 0 || v >= V)
-            throw new IllegalArgumentException("vertex " + v + " is not between 0 and " + (V-1));
     }
 }
