@@ -1,5 +1,7 @@
 import java.util.Iterator;
 import java.util.NoSuchElementException;
+
+
 /**
  * Class for bag.
  *
@@ -14,7 +16,6 @@ public class Bag<Item> implements Iterable<Item> {
      * {beginning of bag}.
      */
     private Node first;
-
     /**
      * Class for node.
      */
@@ -32,31 +33,30 @@ public class Bag<Item> implements Iterable<Item> {
     /**
      * Create an empty stack.
      */
-    public Bag() {
+    Bag() {
         first = null;
         n = 0;
     }
 
     /**
      * Is the BAG empty?
-     * @return    {Boolean}
+     * @return      {Boolean}
      */
     public boolean isEmpty() {
         return first == null;
     }
 
-    /**
+   /**
      * Return the number of items in the bag.
-     * @return     {Integer}.
+     * @return     {Integer}
      */
     public int size() {
         return n;
     }
 
     /**
-     * {Add the item to the bag}.
-     *
-     * @param      item  The item
+     * Add the item to the bag.
+     * @param      item   {The Item}
      */
     public void add(final Item item) {
         Node oldfirst = first;
@@ -69,7 +69,7 @@ public class Bag<Item> implements Iterable<Item> {
 
     /**
      * Return an iterator that iterates over the items in the bag.
-     * @return     {Iterator}.
+     * @return     {Iterator}
      */
     public Iterator<Item> iterator()  {
         return new ListIterator();
@@ -83,7 +83,6 @@ public class Bag<Item> implements Iterable<Item> {
          * {Current Node}.
          */
         private Node current = first;
-
         /**
          * Determines if it has next.
          *
@@ -99,7 +98,7 @@ public class Bag<Item> implements Iterable<Item> {
             throw new UnsupportedOperationException();
         }
         /**
-         * {Next Method}.
+         * {Next method}.
          *
          * @return     {Item}
          */
