@@ -3,23 +3,23 @@
  */
 public class Bipartite {
     /**
-     * { isBipartite variable }
+     * { isBipartite variable }.
      */
     private boolean isBipartite;
     /**
-     * { color variable }
+     * { color variable }.
      */
     private boolean[] color;
     /**
-     * { marked variable }
+     * { marked variable }.
      */
     private boolean[] marked;
     /**
-     * { edgeTo variable }
+     * { edgeTo variable }.
      */
     private int[] edgeTo;
     /**
-     * { cycle variable }
+     * { cycle variable }.
      */
     private Stack<Integer> cycle;
     /**

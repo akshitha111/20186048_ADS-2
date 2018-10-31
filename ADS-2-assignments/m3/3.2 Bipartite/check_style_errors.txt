@@ -1,11 +1,6 @@
 Starting audit...
 Audit done.
 Starting audit...
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m3\3.2 Bipartite\Bipartite.java:5: First sentence should end with a period. [JavadocStyle]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m3\3.2 Bipartite\Bipartite.java:9: First sentence should end with a period. [JavadocStyle]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m3\3.2 Bipartite\Bipartite.java:13: First sentence should end with a period. [JavadocStyle]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m3\3.2 Bipartite\Bipartite.java:17: First sentence should end with a period. [JavadocStyle]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m3\3.2 Bipartite\Bipartite.java:21: First sentence should end with a period. [JavadocStyle]
 [ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m3\3.2 Bipartite\Bipartite.java:30:22: Parameter graph should be final. [FinalParameters]
 [ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m3\3.2 Bipartite\Bipartite.java:42: First sentence should end with a period. [JavadocStyle]
 [ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m3\3.2 Bipartite\Bipartite.java:45:8: Unused @param tag for 'G'. [JavadocMethod]
@@ -32,7 +27,7 @@ Starting audit...
 [ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m3\3.2 Bipartite\Bipartite.java:121: 'if' construct must use '{}'s. [NeedBraces]
 [ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m3\3.2 Bipartite\Bipartite.java:125: Line is longer than 80 characters (found 90). [LineLength]
 Audit done.
-Checkstyle ends with 30 errors.
+Checkstyle ends with 25 errors.
 Starting audit...
 [ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m3\3.2 Bipartite\Graph.java:0: File does not end with a newline. [NewlineAtEndOfFile]
 [ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m3\3.2 Bipartite\Graph.java:1:8: Unused import - java.util.NoSuchElementException. [UnusedImports]
