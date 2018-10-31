@@ -15,17 +15,15 @@ public final class Solution {
      * @param      args  The arguments
      */
     public static void main(final String[] args) {
-        Scanner scan = new Scanner(System.in);
-        int vertices = Integer.parseInt(scan.nextLine());
-        int edges = Integer.parseInt(scan.nextLine());
+        Scanner sc = new Scanner(System.in);
+        int vertices = Integer.parseInt(sc.nextLine());
+        int edges = Integer.parseInt(sc.nextLine());
         Graph g = new Graph(vertices);
-        while (edges > 0) {
-            String[] tokens = scan.nextLine().split(" ");
-            int a = Integer.parseInt(tokens[0]);
-            int b = Integer.parseInt(tokens[1]);
-            g.addEdge(a, b);
-            edges--;
-        }
+     	for (int i = 0; i < edges; i++) {
+     		String[] tokens = sc.nextLine().split(" ");
+     		g.addEdge(Integer.parseInt(tokens[0]),
+     			Integer.parseInt(tokens[1]));
+     	}
         Bipartite b = new Bipartite(g);
         if (b.isBipartite()) {
             System.out.println("Graph is bipartite");
