@@ -54,9 +54,9 @@ public class WordNet {
         DirectedCycle dc = new DirectedCycle(tempObj);
             if (dc.hasCycle()) {
             System.out.println("Cycle exists.");
-        } else {
-            System.out.println("Cycle doesn't exists.");
-        }
+        } //else {
+           // System.out.println("Cycle doesn't exists.");
+        //}
 
     }
 
