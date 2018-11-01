@@ -152,44 +152,36 @@ Your Output:
 7:
 ----------------------------------------
 
-########## Testcase 9: Failed ##########
+########## Testcase 9: Passed ##########
 Expected Output: 
 Multiple roots
 
 Your Output: 
-Exception in thread "main" java.lang.IllegalArgumentException: Multiple roots
-	at WordNet.readHypernym(WordNet.java:67)
-	at WordNet.readSynset(WordNet.java:42)
-	at WordNet.<init>(WordNet.java:17)
-	at Solution.main(Solution.java:22)
+Multiple roots
 ----------------------------------------
 
-########## Testcase 10: Failed ##########
+########## Testcase 10: Passed ##########
 Expected Output: 
 Multiple roots
 
 Your Output: 
-Exception in thread "main" java.lang.IllegalArgumentException: Multiple roots
-	at WordNet.readHypernym(WordNet.java:67)
-	at WordNet.readSynset(WordNet.java:42)
-	at WordNet.<init>(WordNet.java:17)
-	at Solution.main(Solution.java:22)
+Multiple roots
 ----------------------------------------
 
-########## Testcase 11: Failed ##########
+########## Testcase 11: Passed ##########
 Expected Output: 
 IllegalArgumentException
 
 Your Output: 
-
+IllegalArgumentException
 ----------------------------------------
 
-########## Testcase 12: Failed ##########
+########## Testcase 12: Passed ##########
 Expected Output: 
 IllegalArgumentException
 
 Your Output: 
-
+IllegalArgumentException
 ----------------------------------------
 
 ########## Testcase 13: Failed ##########
@@ -216,15 +208,11 @@ Your Output:
 
 ----------------------------------------
 
-########## Testcase 14: Failed ##########
+########## Testcase 14: Passed ##########
 Expected Output: 
 Cycle detected
 
 Your Output: 
-Exception in thread "main" java.lang.IllegalArgumentException: Cycle detected
-	at WordNet.readHypernym(WordNet.java:58)
-	at WordNet.readSynset(WordNet.java:42)
-	at WordNet.<init>(WordNet.java:17)
-	at Solution.main(Solution.java:22)
+Cycle detected
 ----------------------------------------
 
