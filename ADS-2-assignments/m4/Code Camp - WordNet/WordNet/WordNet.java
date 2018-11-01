@@ -46,17 +46,16 @@ public class WordNet {
                 int w = Integer.parseInt(fileArray[1]);
                 tempObj.addEdge(v, w);
             }
-            System.out.println(tempObj);
-
-        } catch (Exception e) {
-
-        }
-        DirectedCycle dc = new DirectedCycle(tempObj);
+                DirectedCycle dc = new DirectedCycle(tempObj);
             if (dc.hasCycle()) {
             System.out.println("Cycle detected");
-        } //else {
-           // System.out.println("Cycle doesn't exists.");
-        //}
+        } else {
+           System.out.println(tempObj);
+        }
+        } 
+        catch (Exception e) {
+
+        }
 
     }
 
