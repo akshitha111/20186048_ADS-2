@@ -19,10 +19,11 @@ public class WordNet {
     public void readSynset(String synset, String hypernyms) {
         int id = 0;
         int vertices = 0;
-        In in = new In("./Files/" + synset);
-        while (!in.isEmpty()) {
+        In input = new In("./Files/" + synset);
+        while (!input.isEmpty()) {
+            vertices++;
             ArrayList<Integer> idlist = new ArrayList<Integer>();
-            String[] synsetArray = in.readString().split(",");
+            String[] synsetArray = input.readString().split(",");
             idlist.add(Integer.parseInt(synsetArray[0]));
             if (synsetArray[1].length() > 1) {
                 for (int i = 0; i < synsetArray[1].length(); i++) {
@@ -33,7 +34,6 @@ public class WordNet {
                     } else {
                         linearprobing.put(nounsArray[i], idlist);
                     }
-                     vertices++;
                 }
             }
         }
