@@ -230,6 +230,6 @@ Your Output:
 1: 0 
 2: 
 
-Cycle exists.
+Cycle detected
 ----------------------------------------
 
