@@ -6,7 +6,7 @@ class Solution {
 	 * Constructs the object.
 	 */
 	private Solution() {
-		
+		//eval purpose constructor.
 	}
 	/**
 	 * main method.
@@ -20,8 +20,9 @@ class Solution {
 		String type = sc.readString();
 		if (type.equals("Graph")) {
 			WordNet wordNet = new WordNet(synset, hypernym);
-		} else {
+		} if (type.equals("Queries")) {
+
+		}
 
 		}
 	}
-}
