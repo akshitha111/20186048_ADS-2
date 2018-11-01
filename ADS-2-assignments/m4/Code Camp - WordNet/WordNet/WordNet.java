@@ -12,7 +12,6 @@ public class WordNet {
      * @param      hypernyms  The hypernyms
      */
     public WordNet(String synsets, String hypernyms) {
-        //seperateChaining
         linearprobing = new LinearProbingHashST<String, List<Integer>>();
         readSynset(synsets, hypernyms);
     }
@@ -22,7 +21,6 @@ public class WordNet {
         int vertices = 0;
         In in = new In("./Files/" + synset);
         while (!in.isEmpty()) {
-            vertices++;
             ArrayList<Integer> idlist = new ArrayList<Integer>();
             String[] synsetArray = in.readString().split(",");
             idlist.add(Integer.parseInt(synsetArray[0]));
@@ -35,6 +33,7 @@ public class WordNet {
                     } else {
                         linearprobing.put(nounsArray[i], idlist);
                     }
+                     vertices++;
                 }
             }
         }
@@ -82,12 +81,3 @@ public class WordNet {
     }
 }
 
-// // distance between nounA and nounB (defined below)
-// public int distance(String nounA, String nounB)
-
-// // a synset (second field of synsets.txt) that is the common ancestor of nounA and nounB
-// // in a shortest ancestral path (defined below)
-// public String sap(String nounA, String nounB)
-
-// // do unit testing of this class
-// public static void main(String[] args)

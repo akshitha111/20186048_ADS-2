@@ -28,8 +28,8 @@ public final class Solution {
 			System.out.println(e.getMessage());
 		}
 		if(type.equals("Queries")) {
-			String[] queryNoun = StdIn.readString().split(" ");
-			if(queryNoun[0].equals("null")) {
+			String[] query = StdIn.readString().split(" ");
+			if(query[0].equals("null")) {
 				System.out.println("IllegalArgumentException");
 			}
 		}
