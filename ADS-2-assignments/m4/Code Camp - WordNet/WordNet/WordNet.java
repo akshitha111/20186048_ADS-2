@@ -10,14 +10,15 @@ public class WordNet {
      * @param      hypernyms  The hypernyms
      */
     public WordNet(String synsets, String hypernyms) {
-        parseMySynsetFile(synsets, hypernyms);
+        readMySynsetFile(synsets, hypernyms);
     }
+    
     /**
-     * parseMySynsetFile.
+     * readMySynsetFile.
      *
      * @param      filename  The filename
      */
-    void parseMySynsetFile(String filename, String hypernyms) {
+    void readMySynsetFile(String filename, String hypernyms) {
         int id = 0;
         int numOfVertices = 0;
         try {
@@ -29,14 +30,14 @@ public class WordNet {
                 String[] nounsArray = fileArray[1].split(" ");
             }
             Digraph digraphObj = new Digraph(numOfVertices);
-            parseMyHypernymsFile(hypernyms, digraphObj);
+            readMyHypernymsFile(hypernyms, digraphObj);
         } catch (Exception e) {
             System.out.println("File not found");
         }
     }
 
 
-    void parseMyHypernymsFile(String hypernyms, Digraph tempObj) {
+    void readMyHypernymsFile(String hypernyms, Digraph tempObj) {
         try {
             In inObj = new In(hypernyms);
             while (!inObj.isEmpty()) {
@@ -46,6 +47,12 @@ public class WordNet {
                 tempObj.addEdge(v, w);
             }
             System.out.println(tempObj);
+            DirectedCycle dc = new DirectedCycle(tempObj);
+            if (dc.hasCycle()) {
+            System.out.println("Cycle exists.");
+        } else {
+            System.out.println("Cycle doesn't exists.");
+        }
         } catch (Exception e) {
 
         }

@@ -1,4 +1,4 @@
-########## Testcase 0: Passed ##########
+########## Testcase 0: Failed ##########
 Expected Output: 
 15 vertices, 14 edges 
 0: 
@@ -33,7 +33,9 @@ Your Output:
 11: 10 
 12: 10 
 13: 6 
-14: 13
+14: 13 
+
+Cycle doesn't exists.
 ----------------------------------------
 
 ########## Testcase 1: Failed ##########
@@ -149,7 +151,9 @@ Your Output:
 4: 7 
 5: 7 
 6: 7 
-7:
+7: 
+
+Cycle doesn't exists.
 ----------------------------------------
 
 ########## Testcase 9: Failed ##########
@@ -163,7 +167,9 @@ Your Output:
 2: 3 
 3: 4 
 4: 5 
-5:
+5: 
+
+Cycle doesn't exists.
 ----------------------------------------
 
 ########## Testcase 10: Failed ##########
@@ -177,7 +183,9 @@ Your Output:
 2: 3 
 3: 
 4: 5 
-5:
+5: 
+
+Cycle doesn't exists.
 ----------------------------------------
 
 ########## Testcase 11: Failed ##########
@@ -228,6 +236,8 @@ Your Output:
 3 vertices, 2 edges 
 0: 1 
 1: 0 
-2:
+2: 
+
+Cycle exists.
 ----------------------------------------
 

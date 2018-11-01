@@ -6,7 +6,7 @@ class Solution {
 	 * Constructs the object.
 	 */
 	private Solution() {
-		//eval purpose constructor.
+		
 	}
 	/**
 	 * main method.
