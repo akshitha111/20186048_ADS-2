@@ -1,83 +1,155 @@
-import java.util.List;
+/**
+ * wordnet.
+ */
 import java.util.ArrayList;
 /**
  * Class for word net.
  */
 public class WordNet {
-    private LinearProbingHashST<String, List<Integer>> linearprobing;
+    /**
+     * declaration of ST.
+     */
+    private LinearProbingHashST<String, ArrayList<Integer>> nounST;
+    /**
+     * declaration of ST.
+     */
+    private LinearProbingHashST<Integer, String> idST;
+    /**
+     * declaration of digraph.
+     */
+    private Digraph dg;
+    /**
+     * declaration of SAP.
+     */
+    private SAP sap;
+
+    /**
+     * Gets the dg.
+     *
+     * @return     The dg.
+     */
+    public Digraph getDg() {
+        return this.dg;
+    }
     /**
      * Constructs the object.
      *
      * @param      synsets    The synsets
      * @param      hypernyms  The hypernyms
      */
-    public WordNet(String synsets, String hypernyms) {
-        linearprobing = new LinearProbingHashST<String, List<Integer>>();
-        readSynset(synsets, hypernyms);
-    }
+    public WordNet(final String synsets, final String hypernyms) {
+        nounST = new LinearProbingHashST<String, ArrayList<Integer>>();
+        idST = new LinearProbingHashST<Integer, String>();
+        try {
+            In in = new In("./Files/" + synsets);
+            int id = 0;
+            while (!in.isEmpty()) {
+                String line = in.readLine();
+                assert !line.equals("");
+                String[] tokens = line.split(",");
+                id = Integer.parseInt(tokens[0]);
+                String[] nouns = tokens[1].split(" ");
 
-    public void readSynset(String synset, String hypernyms) {
-        int id = 0;
-        int vertices = 0;
-        In input = new In("./Files/" + synset);
-        while (!input.isEmpty()) {
-            vertices++;
-            ArrayList<Integer> idlist = new ArrayList<Integer>();
-            String[] synsetArray = input.readString().split(",");
-            idlist.add(Integer.parseInt(synsetArray[0]));
-            if (synsetArray[1].length() > 1) {
-                for (int i = 0; i < synsetArray[1].length(); i++) {
-                    String[] nounsArray = synsetArray[1].split(" ");
-                    if (linearprobing.contains(nounsArray[i])) {
-                        idlist.addAll(linearprobing.get(synsetArray[i]));
-                        linearprobing.put(synsetArray[1], idlist);
+                ArrayList<String> nounsList = new ArrayList<String>();
+                for (String noun : nouns) {
+                    nounsList.add(noun);
+                }
+                idST.put(id, tokens[1]);
+                for (String noun : nouns) {
+                    if (nounST.contains(noun)) {
+                        nounST.get(noun).add(id);
                     } else {
-                        linearprobing.put(nounsArray[i], idlist);
+                        ArrayList<Integer> s = new ArrayList<Integer>();
+                        s.add(id);
+                        nounST.put(noun, s);
                     }
                 }
             }
-        }
-        Digraph digraph = new Digraph(vertices);
-        readHypernym(hypernyms, digraph);
-    }
+           // assert id != 1;
+            this.dg = new Digraph(id + 1);
 
-    public void readHypernym(String hypernyms, Digraph graph) {
+            in = new In("./Files/" + hypernyms);
+            while (!in.isEmpty()) {
+                String line = in.readLine();
+                String[] tokens = line.split(",");
+                int synsetIds = Integer.parseInt(tokens[0]);
 
-        int count = 0;
-        In in = new In("./Files/" + hypernyms);
-        while (!in.isEmpty()) {
-            count++;
-            String[] tokens = in.readString().split(",");
-            for (int i = 1; i < tokens.length; i++) {
-                graph.addEdge(Integer.parseInt(tokens[0]), Integer.parseInt(tokens[i]));
-            }
-        }
-        DirectedCycle directedCycle = new DirectedCycle(graph);
-        if (directedCycle.hasCycle()) {
-            throw new IllegalArgumentException("Cycle detected");
-        } else {
-            int degree = 0;
-            for (int i = 0; i < graph.V(); i++) {
-                if (graph.outdegree(i) == 0) {
-                    degree++;
+                for (int i = 1; i < tokens.length; i++) {
+                    dg.addEdge(synsetIds, Integer.parseInt(tokens[i]));
                 }
             }
-            if (degree > 1) {
-                throw new IllegalArgumentException("Multiple roots");
-            }
-            System.out.println(graph);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
-
+        sap = new SAP(dg);
     }
 
-    // returns all WordNet nouns
+    /**
+     * display output.
+     */
+    public void display() {
+        DirectedCycle dc = new DirectedCycle(dg);
+        if (dc.hasCycle()) {
+            throw new IllegalArgumentException("Cycle detected");
+        } else if (dg.noOfOutdegree() > 1) {
+            throw new IllegalArgumentException("Multiple roots");
+        } else {
+            System.out.println(dg.toString());
+        }
+    }
+    /**
+     * return nouns.
+     *
+     * @return     { description_of_the_return_value }
+     */
     public Iterable<String> nouns() {
-        return linearprobing.keys();
+        return nounST.keys();
     }
+    /**
+     * Determines if noun.
+     *
+     * @param      word  The word
+     *
+     * @return     True if noun, False otherwise.
+     */
+    public boolean isNoun(final String word) {
+        return nounST.contains(word);
+    }
+    /**
+     * checks the distance.
+     *
+     * @param      nounA  The noun a
+     * @param      nounB  The noun b
+     *
+     * @return     { description_of_the_return_value }
+     */
+    public int distance(final String nounA, final String nounB) {
+        if (!isNoun(nounA) || !isNoun(nounB)) {
+            throw new IllegalArgumentException();
+        }
+        ArrayList<Integer> idsA = nounST.get(nounA);
+        ArrayList<Integer> idsB = nounST.get(nounB);
 
-    //is the word a WordNet noun?
-    public boolean isNoun(String word) {
-        return linearprobing.contains(word);
+        return sap.length(idsA, idsB);
+    }
+    /**
+     * ancestor path.
+     *
+     * @param      nounA  The noun a
+     * @param      nounB  The noun b
+     *
+     * @return     { description_of_the_return_value }
+     */
+    public String sap(final String nounA, final String nounB) {
+        if (!isNoun(nounA) || !isNoun(nounB)) {
+            throw new IllegalArgumentException();
+        }
+        ArrayList<Integer> idsA = nounST.get(nounA);
+        ArrayList<Integer> idsB = nounST.get(nounB);
+
+        int ancestor = sap.ancestor(idsA, idsB);
+        return idST.get(ancestor);
     }
 }
+
 

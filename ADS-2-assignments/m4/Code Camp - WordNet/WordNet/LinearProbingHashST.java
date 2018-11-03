@@ -1,6 +1,5 @@
 public class LinearProbingHashST<Key, Value> {
     private static final int INIT_CAPACITY = 4;
-
     private int n;           // number of key-value pairs in the symbol table
     private int m;           // size of linear probing table
     private Key[] keys;      // the keys
