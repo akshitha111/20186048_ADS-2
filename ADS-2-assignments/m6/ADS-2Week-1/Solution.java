@@ -9,42 +9,12 @@ class PageRank {
 		return dg.indegree(v);
 	}
 	public void computePR(int v) {
-		 double compute = getPR(v) / dg.outdegree(v);
-		 System.out.println(v + ":" + compute);
-		 //compute;
+		 double compute =  dg.outdegree(v) / getPR(v);
+		 System.out.println(v + " " +  "-" + " " + compute);
+		
 	}
 }
-	/*private Digraph dg;
-	private double pr;
-	PageRank(Digraph digraph) {
-		this.dg = digraph;
-	}
-*/
-	/*double getPR(int v) {
-		pr = 0;
-		for (int i = 0; i < 1000; i++) {
-		for (Integer j : dg.adj(v)){
-			pr += getPR(i) / dg.outdegree(v);
-		}
-	}
-
-		return pr;
-	}*/
-	/*public String toString() {
-        StringBuilder s = new StringBuilder();
-        //s.append(V + " vertices, " + E + " edges " + NEWLINE);
-        for (int v = 0; v < digraph.V(); v++) {
-            s.append(String.format("%d: - ", v));
-            //for (int w : adj[v]) {
-              //  s.append(String.format("%d ", w));
-            //}
-            s.append(String.format("%d: ", getPR(v)));
-            s.append("\n");
-        }
-        return s.toString();
-    }*/
-
-
+	
 class WebSearch {
 
 }
@@ -58,9 +28,6 @@ public class Solution {
 		// iterate count of vertices times 
 		// to read the adjacency list from std input
 		// and build the graph
-		//for (int i = 0; i < vertices; i++) {
-		//	StdIn.readLine();
-		//}	
 		Digraph dg = new Digraph(vertices);
 		PageRank pr = new PageRank(dg);
 
@@ -73,21 +40,10 @@ public class Solution {
 			}count = i;
 		}
 		System.out.println(dg);
-		pr.computePR(count);
+		for (int i = 0; i < vertices; i++) {
+		pr.computePR(count); 
+	}
 		System.out.println();
-		// Create page rank object and pass the graph object to the constructor
-		
-		/*for (int i = 0; i < vertices; i++) {
-			String[] tokens = sc.nextLine().split(" ");
-			for (int j = 1; j < tokens.length; j++) {
-				pr.computePR(j);
-			}
-		}*/
-		
-		// print the page rank object
-		//pr.calc(vertices);
-		//pr.computePR(vertices);
-		// This part is only for the final test case
 		
 		// File path to the web content
 		String file = "WebContent.txt";
