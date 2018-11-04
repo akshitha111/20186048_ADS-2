@@ -49,6 +49,7 @@ final class Solution {
                 maxcount = idcount;
             }
         }
+        System.out.println(parallelcount + maxcount);
         }
     }
 }
