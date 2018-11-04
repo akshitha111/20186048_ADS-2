@@ -37,8 +37,11 @@ public final class Solution {
                         throw new IllegalArgumentException(
                             "IllegalArgumentException");
                     }
-                    System.out.println("distance = " + wordnet.distance(tokens[0],
-                                       tokens[1]) + ", ancestor = " + wordnet.sap(tokens[0],
+                    System.out.println(
+                        "distance = " + wordnet.distance(tokens[0],
+                                       tokens[1])
+                                        + ", ancestor = "
+                                         + wordnet.sap(tokens[0],
                                                tokens[1]));
                 }
             } catch (Exception e) {
