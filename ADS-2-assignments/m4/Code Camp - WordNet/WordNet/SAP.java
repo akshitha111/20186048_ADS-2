@@ -12,8 +12,10 @@ public class SAP {
     private BreadthFirstDirectedPaths[] bfs;
 
     /**
-    * constructor takes a digraph (not necessarily a DAG).
-    **/
+     * Constructs the object.
+     *
+     * @param      dg    { parameter_description }
+     */
     public SAP(final Digraph dg) {
         this.digraph = new Digraph(dg);
         bfs = new BreadthFirstDirectedPaths[this.digraph.vertices()];
@@ -167,5 +169,11 @@ public class SAP {
         return ancestor;
     }
 }
+
+
+
+
+
+
 
 
