@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Class for di graph.
  */
 public class Digraph {
@@ -46,17 +46,18 @@ public class Digraph {
     /**
      * Constructs the object.
      *
-     * @param      G     { parameter_description }
+     * @param      graph     { parameter_description }
      */
-    public Digraph(final Digraph G) {
-        this(G.vertices());
-        this.edges = G.edges();
-        for (int v = 0; v < vertices; v++)
-            this.indegree[v] = G.indegree(v);
-        for (int v = 0; v < G.vertices(); v++) {
+    public Digraph(final Digraph graph) {
+        this(graph.vertices());
+        this.edges = graph.edges();
+        for (int v = 0; v < vertices; v++) {
+            this.indegree[v] = graph.indegree(v);
+        }
+        for (int v = 0; v < graph.vertices(); v++) {
             // reverse so that adjacency list is in same order as original
             Stack<Integer> reverse = new Stack<Integer>();
-            for (int w : G.adj[v]) {
+            for (int w : graph.adj[v]) {
                 reverse.push(w);
             }
             for (int w : reverse) {
@@ -178,4 +179,10 @@ public class Digraph {
         return s.toString();
     }
 }
+
+
+
+
+
+
 

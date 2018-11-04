@@ -47,11 +47,7 @@ Starting audit...
 Audit done.
 Checkstyle ends with 43 errors.
 Starting audit...
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m4\Code Camp - WordNet\WordNet\Digraph.java:0: File does not end with a newline. [NewlineAtEndOfFile]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m4\Code Camp - WordNet\WordNet\Digraph.java:51:34: Name 'G' must match pattern '^[a-z][a-zA-Z0-9]*$'. [ParameterName]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m4\Code Camp - WordNet\WordNet\Digraph.java:54: 'for' construct must use '{}'s. [NeedBraces]
-Audit done.
-Checkstyle ends with 3 errors.
+Checkstyle ends with 1 errors.
 Starting audit...
 [ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m4\Code Camp - WordNet\WordNet\DirectedCycle.java:0: File does not end with a newline. [NewlineAtEndOfFile]
 Audit done.
