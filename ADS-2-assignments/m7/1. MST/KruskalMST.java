@@ -1,23 +1,34 @@
+/**
+ * Class for kruskal mst.
+ */
 public class KruskalMST {
+    /**
+     * { floating point  }.
+     */
     private static final double FLOATING_POINT_EPSILON = 1E-12;
-
-    private double weight;                        // weight of MST
+    /**
+     * { weight variable }.
+     */
+    private double weight;                // weight of MST
+    /**
+     * { mst }.
+     */
     private Queue<Edge> mst = new Queue<Edge>();  // edges in MST
 
     /**
      * Compute a minimum spanning tree (or forest) of an edge-weighted graph.
-     * @param G the edge-weighted graph
+     * @param g the edge-weighted graph
      */
-    public KruskalMST(EdgeWeightedGraph G) {
+    public KruskalMST(final EdgeWeightedGraph g) {
         // more efficient to build heap by passing array of edges
         MinPQ<Edge> pq = new MinPQ<Edge>();
-        for (Edge e : G.edges()) {
+        for (Edge e : g.edges()) {
             pq.insert(e);
         }
 
         // run greedy algorithm
-        UF uf = new UF(G.V());
-        while (!pq.isEmpty() && mst.size() < G.V() - 1) {
+        UF uf = new UF(g.V());
+        while (!pq.isEmpty() && mst.size() < g.V() - 1) {
             Edge e = pq.delMin();
             int v = e.either();
             int w = e.other(v);
@@ -29,7 +40,7 @@ public class KruskalMST {
         }
 
         // check optimality conditions
-        assert check(G);
+        //assert check(G);
     }
 
     /**
@@ -42,8 +53,10 @@ public class KruskalMST {
     }
 
     /**
-     * Returns the sum of the edge weights in a minimum spanning tree (or forest).
-     * @return the sum of the edge weights in a minimum spanning tree (or forest)
+     * Returns the sum of the edge weights in a minimum
+     *  spanning tree (or forest).
+     * @return the sum of the edge weights in a minimum
+     *  spanning tree (or forest)
      */
     public double weight() {
         return weight;
@@ -58,7 +71,9 @@ public class KruskalMST {
             total += e.weight();
         }
         if (Math.abs(total - weight()) > FLOATING_POINT_EPSILON) {
-            System.err.printf("Weight of edges does not equal weight(): %f vs. %f\n", total, weight());
+            System.err.printf(
+                "Weight of edges does not equal weight(): %f vs. %f\n",
+                 total, weight());
             return false;
         }
 
