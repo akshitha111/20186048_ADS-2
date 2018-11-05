@@ -27,14 +27,11 @@ class PageRank {
 			}
 		}
 		int count = 0;
-		for (int k = 1; k <= 1000; k++) {
-			//if(count == 5){
-				//break;
-			//}
+		for (int k = 1; k <= 1000; k++) {			
 			Double[] tempPR = new Double[digraph.V()];
 			for (int i = 0; i < digraph.V(); i++) {
 				Double sum = 0.00000000000000000000d;
-				for (int each: digraph.reverse().adj(i)) {
+				for (int each : digraph.reverse().adj(i)) {
 					sum = sum + pgRank[each] / digraph.outdegree(each);
 				}
 				tempPR[i] = sum;
@@ -50,7 +47,7 @@ class PageRank {
 
 	public void display(){
 		for(int i =0 ; i< digraph.V(); i++){
-			System.out.println(i+" - "+pgRank[i]);
+			System.out.println(i + " - "+ pgRank[i]);
 		}
 	}
 }
