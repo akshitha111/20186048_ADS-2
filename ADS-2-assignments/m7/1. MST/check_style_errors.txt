@@ -232,20 +232,7 @@ Starting audit...
 Audit done.
 Checkstyle ends with 141 errors.
 Starting audit...
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m7\1. MST\KruskalMST.java:0: File does not end with a newline. [NewlineAtEndOfFile]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m7\1. MST\KruskalMST.java:56: Line is longer than 80 characters (found 82). [LineLength]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m7\1. MST\KruskalMST.java:57: Line is longer than 80 characters (found 81). [LineLength]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m7\1. MST\KruskalMST.java:62: Line has trailing spaces. [RegexpSingleline]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m7\1. MST\KruskalMST.java:64:5: Missing a Javadoc comment. [JavadocMethod]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m7\1. MST\KruskalMST.java:64:27: Parameter G should be final. [FinalParameters]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m7\1. MST\KruskalMST.java:64:45: Name 'G' must match pattern '^[a-z][a-zA-Z0-9]*$'. [ParameterName]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m7\1. MST\KruskalMST.java:72: Line is longer than 80 characters (found 103). [LineLength]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m7\1. MST\KruskalMST.java:96: Line is longer than 80 characters (found 81). [LineLength]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m7\1. MST\KruskalMST.java:103: 'if' construct must use '{}'s. [NeedBraces]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m7\1. MST\KruskalMST.java:105: Line has trailing spaces. [RegexpSingleline]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m7\1. MST\KruskalMST.java:111: Line is longer than 80 characters (found 96). [LineLength]
 Audit done.
-Checkstyle ends with 12 errors.
 Starting audit...
 [ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m7\1. MST\MinPQ.java:0: File does not end with a newline. [NewlineAtEndOfFile]
 [ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m7\1. MST\MinPQ.java:15: Line is longer than 80 characters (found 89). [LineLength]
