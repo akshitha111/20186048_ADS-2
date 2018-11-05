@@ -3,7 +3,14 @@ Expected Output:
 614708.00000
 
 Your Output: 
-3617557.00000
+Exception in thread "main" java.util.IllegalFormatPrecisionException: 5
+	at java.base/java.util.Formatter$FormatSpecifier.checkInteger(Formatter.java:3131)
+	at java.base/java.util.Formatter$FormatSpecifier.<init>(Formatter.java:2872)
+	at java.base/java.util.Formatter.parse(Formatter.java:2711)
+	at java.base/java.util.Formatter.format(Formatter.java:2653)
+	at java.base/java.io.PrintStream.format(PrintStream.java:1053)
+	at java.base/java.io.PrintStream.printf(PrintStream.java:949)
+	at Solution.main(Solution.java:17)
 ----------------------------------------
 
 ########## Testcase 1: Failed ##########
@@ -11,7 +18,14 @@ Expected Output:
 1.81000
 
 Your Output: 
-1.15000
+Exception in thread "main" java.util.IllegalFormatPrecisionException: 5
+	at java.base/java.util.Formatter$FormatSpecifier.checkInteger(Formatter.java:3131)
+	at java.base/java.util.Formatter$FormatSpecifier.<init>(Formatter.java:2872)
+	at java.base/java.util.Formatter.parse(Formatter.java:2711)
+	at java.base/java.util.Formatter.format(Formatter.java:2653)
+	at java.base/java.io.PrintStream.format(PrintStream.java:1053)
+	at java.base/java.io.PrintStream.printf(PrintStream.java:949)
+	at Solution.main(Solution.java:17)
 ----------------------------------------
 
 ########## Testcase 2: Failed ##########
@@ -19,7 +33,14 @@ Expected Output:
 10.46351
 
 Your Output: 
-5.16509
+Exception in thread "main" java.util.IllegalFormatPrecisionException: 5
+	at java.base/java.util.Formatter$FormatSpecifier.checkInteger(Formatter.java:3131)
+	at java.base/java.util.Formatter$FormatSpecifier.<init>(Formatter.java:2872)
+	at java.base/java.util.Formatter.parse(Formatter.java:2711)
+	at java.base/java.util.Formatter.format(Formatter.java:2653)
+	at java.base/java.io.PrintStream.format(PrintStream.java:1053)
+	at java.base/java.io.PrintStream.printf(PrintStream.java:949)
+	at Solution.main(Solution.java:17)
 ----------------------------------------
 
 ########## Testcase 3: Failed ##########
@@ -27,7 +48,14 @@ Expected Output:
 37.00000
 
 Your Output: 
-42.00000
+Exception in thread "main" java.util.IllegalFormatPrecisionException: 5
+	at java.base/java.util.Formatter$FormatSpecifier.checkInteger(Formatter.java:3131)
+	at java.base/java.util.Formatter$FormatSpecifier.<init>(Formatter.java:2872)
+	at java.base/java.util.Formatter.parse(Formatter.java:2711)
+	at java.base/java.util.Formatter.format(Formatter.java:2653)
+	at java.base/java.io.PrintStream.format(PrintStream.java:1053)
+	at java.base/java.io.PrintStream.printf(PrintStream.java:949)
+	at Solution.main(Solution.java:17)
 ----------------------------------------
 
 ########## Testcase 4: Failed ##########
@@ -35,14 +63,28 @@ Expected Output:
 19.00000
 
 Your Output: 
-21.00000
+Exception in thread "main" java.util.IllegalFormatPrecisionException: 5
+	at java.base/java.util.Formatter$FormatSpecifier.checkInteger(Formatter.java:3131)
+	at java.base/java.util.Formatter$FormatSpecifier.<init>(Formatter.java:2872)
+	at java.base/java.util.Formatter.parse(Formatter.java:2711)
+	at java.base/java.util.Formatter.format(Formatter.java:2653)
+	at java.base/java.io.PrintStream.format(PrintStream.java:1053)
+	at java.base/java.io.PrintStream.printf(PrintStream.java:949)
+	at Solution.main(Solution.java:17)
 ----------------------------------------
 
-########## Testcase 5: Passed ##########
+########## Testcase 5: Failed ##########
 Expected Output: 
 2.00000
 
 Your Output: 
-2.00000
+Exception in thread "main" java.util.IllegalFormatPrecisionException: 5
+	at java.base/java.util.Formatter$FormatSpecifier.checkInteger(Formatter.java:3131)
+	at java.base/java.util.Formatter$FormatSpecifier.<init>(Formatter.java:2872)
+	at java.base/java.util.Formatter.parse(Formatter.java:2711)
+	at java.base/java.util.Formatter.format(Formatter.java:2653)
+	at java.base/java.io.PrintStream.format(PrintStream.java:1053)
+	at java.base/java.io.PrintStream.printf(PrintStream.java:949)
+	at Solution.main(Solution.java:17)
 ----------------------------------------
 

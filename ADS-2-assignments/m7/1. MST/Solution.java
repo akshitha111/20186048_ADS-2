@@ -14,7 +14,7 @@ class Solution {
 			edgeWeightedGraph.addEdge(edge);
 		}
 		KruskalMST kruskal = new KruskalMST(edgeWeightedGraph);
-		System.out.printf("%.5f\n",  kruskal.weight());
+		System.out.printf("%.5d\n",  kruskal.weight());
 
 	}
 }
