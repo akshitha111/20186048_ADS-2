@@ -39,10 +39,10 @@ class PageRank {
 				}
 				tempPR[i] = sum;
 			}
-			if(pgRank.equals(tempPR)){
+			/*if(pgRank.equals(tempPR)){
 				System.out.println("equals");
 				count++;
-			}
+			}*/
 			pgRank = tempPR;
 		}
 	}
