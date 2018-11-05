@@ -56,8 +56,8 @@ public class Digraph {
 
     private final int V;           // number of vertices in this digraph
     private int E;                 // number of edges in this digraph
-    private Bag<Integer>[] adj;    // adj[v] = adjacency list for vertex v
-    private int[] indegree;        // indegree[v] = indegree of vertex v
+    Bag<Integer>[] adj;    // adj[v] = adjacency list for vertex v
+    int[] indegree;        // indegree[v] = indegree of vertex v
     
     /**
      * Initializes an empty digraph with <em>V</em> vertices.
@@ -178,7 +178,7 @@ public class Digraph {
      * @return the vertices adjacent from vertex {@code v} in this digraph, as an iterable
      * @throws IllegalArgumentException unless {@code 0 <= v < V}
      */
-    public Iterable<Integer> adj(int v) {
+    Iterable<Integer> adj(int v) {
         validateVertex(v);
         return adj[v];
     }
@@ -214,7 +214,7 @@ public class Digraph {
      *
      * @return the reverse of the digraph
      */
-    public Digraph reverse() {
+    Digraph reverse() {
         Digraph reverse = new Digraph(V);
         for (int v = 0; v < V; v++) {
             for (int w : adj(v)) {
