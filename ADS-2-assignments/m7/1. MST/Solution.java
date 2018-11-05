@@ -7,7 +7,7 @@ final class Solution {
      * Constructs the object.
      */
     private Solution() {
-
+        //unused constructor.
     }
     /**
      * { Client program }.
