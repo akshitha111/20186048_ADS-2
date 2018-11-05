@@ -1,21 +1,40 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Arrays;
+/**
+ * Class for page rank.
+ */
 class PageRank {
+	/**
+	 * { var_description }
+	 */
 	private Digraph digraph;
+	/**
+	 * { var_description }
+	 */
 	private Digraph revgraph;
+	/**
+	 * { var_description }
+	 */
 	private Double[] pgRank;
+	/**
+	 * Constructs the object.
+	 *
+	 * @param      gr    The graphics
+	 */
 	PageRank(Digraph gr) {
 		this.digraph = gr;
 		this.revgraph = digraph.reverse();
 		pgRank = new Double[digraph.V()];
-		int vertex = digraph.V();
+		//int vertex = digraph.V();
 		for (int i = 0; i < digraph.V(); i++) {
-			pgRank[i] = 1.000000d / vertex;
+			pgRank[i] = 1.000000d / digraph.V();
 		}
 		calcPageRank();
 	}
-
+	/**
+	 * Calculates the page rank.
+	 */
 	public void calcPageRank() {
 		for (int i = 0; i < digraph.V(); i++) {
 			if (digraph.outdegree(i) == 0) {
@@ -40,24 +59,41 @@ class PageRank {
 			pgRank = tempPR;
 		}
 	}
-
+	/**
+	 * Gets the page rank.
+	 *
+	 * @param      v     { parameter_description }
+	 *
+	 * @return     The page rank.
+	 */
 	public double getPageRank(int v){
 		return pgRank[v];
 	}
-
+	/**
+	 * { function_description }
+	 */
 	public void display(){
 		for(int i =0 ; i< digraph.V(); i++){
 			System.out.println(i + " - "+ pgRank[i]);
 		}
 	}
 }
-
+/**
+ * Class for web search.
+ */
 class WebSearch {
 
 }
 
-
+/**
+ * Class for solution.
+ */
 public class Solution {
+	/**
+	 * { function_description }
+	 *
+	 * @param      args  The arguments
+	 */
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		// read the first line of the input to get the number of vertices
