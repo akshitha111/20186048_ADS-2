@@ -28,9 +28,9 @@ class PageRank {
 		}
 		int count = 0;
 		for (int k = 1; k <= 1000; k++) {
-			if(count == 5){
-				break;
-			}
+			//if(count == 5){
+				//break;
+			//}
 			Double[] tempPR = new Double[digraph.V()];
 			for (int i = 0; i < digraph.V(); i++) {
 				Double sum = 0.00000000000000000000d;
@@ -39,10 +39,7 @@ class PageRank {
 				}
 				tempPR[i] = sum;
 			}
-			/*if(pgRank.equals(tempPR)){
-				System.out.println("equals");
-				count++;
-			}*/
+			
 			pgRank = tempPR;
 		}
 	}
