@@ -16,7 +16,7 @@ Your Output:
 50
 Exception in thread "main" java.util.NoSuchElementException: No line found
 	at java.base/java.util.Scanner.nextLine(Scanner.java:1651)
-	at Solution.main(Solution.java:36)
+	at Solution.main(Solution.java:38)
 ----------------------------------------
 
 ########## Testcase 1: Failed ##########
@@ -37,7 +37,7 @@ Your Output:
 30
 Exception in thread "main" java.util.NoSuchElementException: No line found
 	at java.base/java.util.Scanner.nextLine(Scanner.java:1651)
-	at Solution.main(Solution.java:36)
+	at Solution.main(Solution.java:38)
 ----------------------------------------
 
 ########## Testcase 2: Failed ##########
@@ -1444,7 +1444,7 @@ Your Output:
 29
 Exception in thread "main" java.util.NoSuchElementException: No line found
 	at java.base/java.util.Scanner.nextLine(Scanner.java:1651)
-	at Solution.main(Solution.java:36)
+	at Solution.main(Solution.java:38)
 ----------------------------------------
 
 ########## Testcase 3: Failed ##########
@@ -8357,7 +8357,7 @@ Your Output:
 22
 Exception in thread "main" java.util.NoSuchElementException: No line found
 	at java.base/java.util.Scanner.nextLine(Scanner.java:1651)
-	at Solution.main(Solution.java:36)
+	at Solution.main(Solution.java:38)
 ----------------------------------------
 
 ########## Testcase 4: Failed ##########
@@ -13100,7 +13100,7 @@ Your Output:
 216
 Exception in thread "main" java.util.NoSuchElementException: No line found
 	at java.base/java.util.Scanner.nextLine(Scanner.java:1651)
-	at Solution.main(Solution.java:36)
+	at Solution.main(Solution.java:38)
 ----------------------------------------
 
 ########## Testcase 5: Failed ##########
@@ -23009,6 +23009,6 @@ Your Output:
 60
 Exception in thread "main" java.util.NoSuchElementException: No line found
 	at java.base/java.util.Scanner.nextLine(Scanner.java:1651)
-	at Solution.main(Solution.java:36)
+	at Solution.main(Solution.java:38)
 ----------------------------------------
 
