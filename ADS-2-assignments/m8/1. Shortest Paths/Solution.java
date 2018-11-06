@@ -21,7 +21,8 @@ public final class Solution {
         int nameOfStations = Integer.parseInt(tokens[0]);
         int m = Integer.parseInt(tokens[1]);
         String[] check = sc.nextLine().split(" ");
-        EdgeWeightedGraph edgeWeightedGraph = new EdgeWeightedGraph(nameOfStations);
+        EdgeWeightedGraph edgeWeightedGraph =
+        new EdgeWeightedGraph(nameOfStations);
         HashMap<String, Integer> hash = new HashMap<String, Integer>();
         for (int i = 0; i < check.length; i++) {
             hash.put(check[i], i);
@@ -44,7 +45,11 @@ public final class Solution {
                 System.out.println((int)
                     dijkstra.distTo(hash.get(check1[1])));
             }
-            
         }
     }
 }
+
+
+
+
+
