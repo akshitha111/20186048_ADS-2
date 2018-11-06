@@ -45,6 +45,7 @@ public final class Solution {
                 System.out.println((int)
                     dijkstra.distTo(hash.get(check1[1])));
             }
+            queries--;
         }
     }
 }
