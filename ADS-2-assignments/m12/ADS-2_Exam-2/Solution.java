@@ -26,7 +26,6 @@ public class Solution {
                 
         }        
         String caseToGo =  sc.nextLine();
-
 		switch (caseToGo) {
 		case "Graph":
 		System.out.println(digraph);
@@ -45,11 +44,16 @@ public class Solution {
 			if(!dijik.hasPathTo(destination)) {
 				System.out.println("No Path Found.");
 			}
-			
-
-			
-			
+			else {
+				System.out.println(dijik.distTo[destination]);
+			}
+			break;		
 		case "ViaPaths":
+			String[] values = sc.nextLine().split(" ");
+			int sourceOne = Integer.parseInt(values[0]);
+			int via = Integer.parseInt(values[1]);
+			int destinationOne = Integer.parseInt(values[2]);
+
 			// Handle the case of ViaPaths, where three integers are given.
 			// First is the source and second is the via is the one where path should pass throuh.
 			// third is the destination.
