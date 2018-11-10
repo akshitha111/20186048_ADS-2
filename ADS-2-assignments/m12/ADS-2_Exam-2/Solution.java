@@ -60,8 +60,8 @@ public final class Solution {
             int destinationOne = Integer.parseInt(values[2]);
             DijkstraUndirectedSP dusp1 = new
             DijkstraUndirectedSP(digraph, sourceOne);
-            DijkstraUndirectedSP dusp2 = new
-            DijkstraUndirectedSP(digraph, destinationOne);
+            /*DijkstraUndirectedSP dusp2 = new
+            DijkstraUndirectedSP(digraph, destinationOne);*/
             if (!dusp1.hasPathTo(destinationOne)) {
                 System.out.println("No Path Found.");
             } else {
