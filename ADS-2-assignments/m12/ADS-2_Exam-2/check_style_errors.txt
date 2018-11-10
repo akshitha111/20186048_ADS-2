@@ -541,14 +541,15 @@ Starting audit...
 [ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m12\ADS-2_Exam-2\Solution.java:33: Line has trailing spaces. [RegexpSingleline]
 [ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m12\ADS-2_Exam-2\Solution.java:36: Line is longer than 80 characters (found 90). [LineLength]
 [ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m12\ADS-2_Exam-2\Solution.java:40: Line has trailing spaces. [RegexpSingleline]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m12\ADS-2_Exam-2\Solution.java:44: Line is longer than 80 characters (found 90). [LineLength]
+[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m12\ADS-2_Exam-2\Solution.java:44: Line is longer than 80 characters (found 95). [LineLength]
 [ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m12\ADS-2_Exam-2\Solution.java:45:27: 'if' is not followed by whitespace. [WhitespaceAfter]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m12\ADS-2_Exam-2\Solution.java:49: Line has trailing spaces. [RegexpSingleline]
+[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m12\ADS-2_Exam-2\Solution.java:48: Line has trailing spaces. [RegexpSingleline]
 [ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m12\ADS-2_Exam-2\Solution.java:50: Line has trailing spaces. [RegexpSingleline]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m12\ADS-2_Exam-2\Solution.java:52: Line is longer than 80 characters (found 87). [LineLength]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m12\ADS-2_Exam-2\Solution.java:53: Line is longer than 80 characters (found 110). [LineLength]
+[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m12\ADS-2_Exam-2\Solution.java:51: Line has trailing spaces. [RegexpSingleline]
+[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m12\ADS-2_Exam-2\Solution.java:53: Line is longer than 80 characters (found 87). [LineLength]
+[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m12\ADS-2_Exam-2\Solution.java:54: Line is longer than 80 characters (found 110). [LineLength]
 Audit done.
-Checkstyle ends with 17 errors.
+Checkstyle ends with 18 errors.
 Starting audit...
 [ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m12\ADS-2_Exam-2\Stack.java:0: File does not end with a newline. [NewlineAtEndOfFile]
 [ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m12\ADS-2_Exam-2\Stack.java:6: Line is longer than 80 characters (found 89). [LineLength]

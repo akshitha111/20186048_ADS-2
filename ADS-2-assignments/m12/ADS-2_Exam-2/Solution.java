@@ -39,12 +39,13 @@ public class Solution {
 			// Other wise print "No Path Found."
 			// 
 			String[] check = sc.nextLine().split(" ");
-			int m = Integer.parseInt(check[0]);
-			int n = Integer.parseInt(check[1]);
-			DijkstraUndirectedSP dijik = new DijkstraUndirectedSP(digraph, m);
-			if(!dijik.hasPathTo(n)) {
-				System.out.println("No Path Found");
+			int source = Integer.parseInt(check[0]);
+			int destination = Integer.parseInt(check[1]);
+			DijkstraUndirectedSP dijik = new DijkstraUndirectedSP(digraph, source);
+			if(!dijik.hasPathTo(destination)) {
+				System.out.println("No Path Found.");
 			}
+			
 
 			
 			
