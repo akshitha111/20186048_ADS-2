@@ -388,10 +388,6 @@ Audit done.
 Starting audit...
 Audit done.
 Starting audit...
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m12\ADS-2_Exam-2\Solution.java:0: File does not end with a newline. [NewlineAtEndOfFile]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m12\ADS-2_Exam-2\Solution.java:61: Line is longer than 80 characters (found 86). [LineLength]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m12\ADS-2_Exam-2\Solution.java:62: Line is longer than 80 characters (found 91). [LineLength]
 Audit done.
-Checkstyle ends with 3 errors.
 Starting audit...
 Audit done.
