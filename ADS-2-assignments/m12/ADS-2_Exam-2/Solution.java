@@ -37,13 +37,15 @@ public class Solution {
 			// First is the source and second is the destination.
 			// If the path exists print the distance between them.
 			// Other wise print "No Path Found."
+			// 
 			String[] check = sc.nextLine().split(" ");
-            int m = Integer.parseInt(check[0]);
-            int n = Integer.parseInt(check[1]);
-            DijkstraUndirectedSP dsp = new DijkstraUndirectedSP(digraph, n);
-            if (!dsp.hasPathTo(m)) {
-                System.out.println("No Path Found");
-            } 
+			int m = Integer.parseInt(check[0]);
+			int n = Integer.parseInt(check[1]);
+			DijkstraUndirectedSP dijik = new DijkstraUndirectedSP(digraph, m);
+			if(!dijik.hasPathTo(n)) {
+				System.out.println("No Path Found");
+			}
+
 			
 			
 		case "ViaPaths":
