@@ -71,8 +71,9 @@ public final class Solution {
                 //System.out.println(b);
                 double c = a + b;
                 System.out.println(c);
-                System.out.println(dusp1.pathTo(via));
-                System.out.println(dusp2.pathTo(destinationOne));
+                String str = "";
+                //System.out.println(dusp1.pathTo(via));
+                //System.out.println(dusp2.pathTo(destinationOne));
                 //System.out.println(dusp2.pathTo[destinationOne]);
                 
             }
