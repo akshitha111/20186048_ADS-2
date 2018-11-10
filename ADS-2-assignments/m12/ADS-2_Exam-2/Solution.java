@@ -1,7 +1,14 @@
 import java.util.Scanner;
+/**
+ * Class for solution.
+ */
 public class Solution {
-
-	public static void main(String[] args) {
+	/**
+	 * { function_description }
+	 *
+	 * @param      args  The arguments
+	 */
+	public static void main(final String[] args) {
 		// Self loops are not allowed...
 		// Parallel Edges are allowed...
 		// Take the Graph input here...
@@ -17,28 +24,27 @@ public class Solution {
                 Edge edge = new Edge(verOne,edgeOne,weight);
                 digraph.addEdge(edge);
                 
-        }
-        
-        String caseToGo =  sc.nextLine();		
+        }        
+        String caseToGo =  sc.nextLine();
+
 		switch (caseToGo) {
 		case "Graph":
 		System.out.println(digraph);
-			//Print the Graph Object.
-		 
+			//Print the Graph Object.		 
 
 		case "DirectedPaths":
 			// Handle the case of DirectedPaths, where two integers are given.
 			// First is the source and second is the destination.
 			// If the path exists print the distance between them.
 			// Other wise print "No Path Found."
-			/*EdgeWeightedDigraph digraph = new EdgeWeightedDigraph(edges);
-			for (int i = 0; i < edges; i++) {
-				String[] check = sc.nextLine().split(" ");
-				DirectedEdge directedEdge = new DirectedEdge(Integer.parseInt(check[0]),
-                Integer.parseInt(check[1]), Double.parseDouble(check[2]));
-			}
-			DijkstraSP dijkstra = new DijkstraSP(digraph, )
-			break;*/
+			String[] check = sc.nextLine().split(" ");
+            int m = Integer.parseInt(check[0]);
+            int n = Integer.parseInt(check[1]);
+            DijkstraUndirectedSP dsp = new DijkstraUndirectedSP(digraph, n);
+            if (!dsp.hasPathTo(m)) {
+                System.out.println("No Path Found");
+            } 
+			
 			
 		case "ViaPaths":
 			// Handle the case of ViaPaths, where three integers are given.
