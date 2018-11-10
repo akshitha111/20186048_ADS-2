@@ -60,12 +60,17 @@ public final class Solution {
             int destinationOne = Integer.parseInt(values[2]);
             DijkstraUndirectedSP dusp1 = new
             DijkstraUndirectedSP(digraph, sourceOne);
-            /*DijkstraUndirectedSP dusp2 = new
-            DijkstraUndirectedSP(digraph, destinationOne);*/
+            DijkstraUndirectedSP dusp2 = new
+            DijkstraUndirectedSP(digraph, via);
             if (!dusp1.hasPathTo(destinationOne)) {
                 System.out.println("No Path Found.");
             } else {
-                System.out.println(dusp1.distTo[via]);
+                double a = dusp1.distTo[via];
+                double b = dusp2.distTo[destinationOne];
+                //System.out.println(a);
+                //System.out.println(b);
+                double c = a + b;
+                System.out.println(c);
                 //System.out.println(dusp2.pathTo[destinationOne]);
             }
             // Handle the case of ViaPaths, where three integers are given.
