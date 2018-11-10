@@ -31,7 +31,7 @@ public class Solution {
 		case "Graph":
 		System.out.println(digraph);
 			//Print the Graph Object.		 
-
+		break;
 		case "DirectedPaths":
 			// Handle the case of DirectedPaths, where two integers are given.
 			// First is the source and second is the destination.
