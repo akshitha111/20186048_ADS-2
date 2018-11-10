@@ -64,6 +64,8 @@ public final class Solution {
             DijkstraUndirectedSP(digraph, destinationOne);
             if (!dusp1.hasPathTo(destinationOne)) {
                 System.out.println("No Path Found.");
+            } else {
+                System.out.println(dusp1.distTo[destinationOne]);
             }
             // Handle the case of ViaPaths, where three integers are given.
             // First is the source and second is
