@@ -65,7 +65,7 @@ public final class Solution {
             if (!dusp1.hasPathTo(destinationOne)) {
                 System.out.println("No Path Found.");
             } else {
-                System.out.println(dusp1.distTo[destinationOne]);
+                System.out.println(dusp1.distTo[via]);
                 //System.out.println(dusp2.pathTo[destinationOne]);
             }
             // Handle the case of ViaPaths, where three integers are given.
