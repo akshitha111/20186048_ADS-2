@@ -1,4 +1,8 @@
 Starting audit...
+[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m10\Seam Carving\package-info.java:0: File does not end with a newline. [NewlineAtEndOfFile]
+Audit done.
+Checkstyle ends with 1 errors.
+Starting audit...
 [ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m10\Seam Carving\Picture.java:0: File does not end with a newline. [NewlineAtEndOfFile]
 [ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m10\Seam Carving\Picture.java:36:8: Unused import - javax.swing.JPanel. [UnusedImports]
 [ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m10\Seam Carving\Picture.java:45: Line is longer than 80 characters (found 83). [LineLength]
@@ -223,22 +227,15 @@ Audit done.
 Checkstyle ends with 43 errors.
 Starting audit...
 [ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m10\Seam Carving\SeamCarver.java:0: File does not end with a newline. [NewlineAtEndOfFile]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m10\Seam Carving\SeamCarver.java:14: Line has trailing spaces. [RegexpSingleline]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m10\Seam Carving\SeamCarver.java:15:5: Missing a Javadoc comment. [JavadocMethod]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m10\Seam Carving\SeamCarver.java:58: Line is longer than 80 characters (found 85). [LineLength]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m10\Seam Carving\SeamCarver.java:66: First sentence should end with a period. [JavadocStyle]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m10\Seam Carving\SeamCarver.java:80: Line has trailing spaces. [RegexpSingleline]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m10\Seam Carving\SeamCarver.java:210: Line is longer than 80 characters (found 85). [LineLength]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m10\Seam Carving\SeamCarver.java:212:17: 'pic' hides a field. [HiddenField]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m10\Seam Carving\SeamCarver.java:233: Line is longer than 80 characters (found 85). [LineLength]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m10\Seam Carving\SeamCarver.java:235:17: 'pic' hides a field. [HiddenField]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m10\Seam Carving\SeamCarver.java:250: Line has trailing spaces. [RegexpSingleline]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m10\Seam Carving\SeamCarver.java:251:5: Missing a Javadoc comment. [JavadocMethod]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m10\Seam Carving\SeamCarver.java:257: Line has trailing spaces. [RegexpSingleline]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m10\Seam Carving\SeamCarver.java:259: 'if' construct must use '{}'s. [NeedBraces]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m10\Seam Carving\SeamCarver.java:259:50: '||' should be on a new line. [OperatorWrap]
+[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m10\Seam Carving\SeamCarver.java:239: Line is longer than 80 characters (found 85). [LineLength]
+[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m10\Seam Carving\SeamCarver.java:241:17: 'pic' hides a field. [HiddenField]
+[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m10\Seam Carving\SeamCarver.java:256: Line has trailing spaces. [RegexpSingleline]
+[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m10\Seam Carving\SeamCarver.java:257:5: Missing a Javadoc comment. [JavadocMethod]
+[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m10\Seam Carving\SeamCarver.java:263: Line has trailing spaces. [RegexpSingleline]
+[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m10\Seam Carving\SeamCarver.java:265: 'if' construct must use '{}'s. [NeedBraces]
+[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m10\Seam Carving\SeamCarver.java:265:50: '||' should be on a new line. [OperatorWrap]
 Audit done.
-Checkstyle ends with 15 errors.
+Checkstyle ends with 8 errors.
 Starting audit...
 [ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m10\Seam Carving\ShowEnergy.java:0: File does not end with a newline. [NewlineAtEndOfFile]
 [ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m10\Seam Carving\ShowEnergy.java:5: Line has trailing spaces. [RegexpSingleline]

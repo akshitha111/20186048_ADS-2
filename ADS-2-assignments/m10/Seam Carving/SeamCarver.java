@@ -11,7 +11,11 @@ public class SeamCarver {
      * picture variable.
      */
     private Picture pic;
-    
+    /**
+     * Constructs the object.
+     *
+     * @param      picture  The picture
+     */
     public SeamCarver(final Picture picture) {
         if (picture == null) {
             throw new java.lang.IllegalArgumentException("picture is null");
@@ -55,7 +59,8 @@ public class SeamCarver {
     public  double energy(final int x, final int y) {
         int w = width() - 1, h = height() - 1;
         if (x < 0 || x > w || y < 0 || y > h) {
-            throw new java.lang.IllegalArgumentException("IllegalArgumentException");
+            throw new
+            java.lang.IllegalArgumentException("IllegalArgumentException");
         }
         if (x == 0 || x == w ||  y == 0 || y == h) {
             return BORDER;
@@ -64,12 +69,12 @@ public class SeamCarver {
     }
 
     /**
-     * // internal energy of pixel at column x and row y not on boarder
+     * internal energy of pixel at column x and row y not on border.
      *
      * @param      x  integer
      * @param      y  integer
      *
-     * @return  // energy of pixel at column x and row y not on boarder
+     * @return  // energy of pixel at column x and row y not on border.
      */
     private double internalEnergy(final int x, final int y) {
         Color right = this.pic.get(x + 1, y);
@@ -77,7 +82,7 @@ public class SeamCarver {
         Color up = this.pic.get(x, y - 1);
         Color down = this.pic.get(x, y + 1);
         return Math.sqrt(gradient(left, right) + gradient(up, down));
-    }    
+    }
     /**
      * energy storage function.
      *
@@ -207,20 +212,21 @@ public class SeamCarver {
      */
     public void removeHorizontalSeam(final int[] a) {
         if (height() <= 1 || !isValid(a, width(), height() - 1)) {
-            throw new java.lang.IllegalArgumentException("IllegalArgumentException");
+            throw
+            new java.lang.IllegalArgumentException("IllegalArgumentException");
         }
-        Picture pic = new Picture(width(), height() - 1);
+        Picture pict = new Picture(width(), height() - 1);
         for (int w = 0; w < width(); w++) {
             for (int h = 0; h < a[w]; h++) {
-                pic.set(w, h, this.pic.get(w, h));
+                pict.set(w, h, this.pic.get(w, h));
             }
 
             for (int h = a[w] + 1; h < height(); h++) {
-                pic.set(w, h - 1, this.pic.get(w, h));
+                pict.set(w, h - 1, this.pic.get(w, h));
             }
 
         }
-        this.pic = pic;
+        this.pic = pict;
     }
 
     /**
