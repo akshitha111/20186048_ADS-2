@@ -236,36 +236,57 @@ public class SeamCarver {
      */
     public void removeVerticalSeam(final int[] a) {
         if (width() <= 1 || !isValid(a, height(), width())) {
-            throw new java.lang.IllegalArgumentException("IllegalArgumentException");
+            throw
+            new java.lang.IllegalArgumentException("IllegalArgumentException");
         }
-        Picture pic = new Picture(width() - 1, height());
+        Picture pict = new Picture(width() - 1, height());
         for (int h = 0; h < height(); h++) {
             for (int w = 0; w < a[h]; w++) {
-                pic.set(w, h, this.pic.get(w, h));
+                pict.set(w, h, this.pic.get(w, h));
             }
 
 
             for (int w = a[h] + 1; w < width(); w++) {
-                pic.set(w - 1, h, this.pic.get(w, h));
+                pict.set(w - 1, h, this.pic.get(w, h));
             }
 
         }
-        this.pic = pic;
+        this.pic = pict;
     }
-
-   
+    /**
+     * Determines if valid.
+     *
+     * @param      a      { parameter_description }
+     * @param      len    The length
+     * @param      range  The range
+     *
+     * @return     True if valid, False otherwise.
+     */
     private boolean isValid(final int[] a, final int len, final int range) {
         if (a.length != len || a[0] < 0 || a[0] > range) {
             return false;
         }
         if (a == null) {
             return false;
-        }        
+        }
         for (int i = 1; i < len; i++) {
-            if (a[i] < Math.max(0, a[i - 1] - 1) ||
-                a[i] > Math.min(range, a[i - 1] + 1))
+            if (a[i] < Math.max(0, a[i - 1] - 1)
+                ||
+                a[i] > Math.min(range, a[i - 1] + 1)) {
                 return false;
+        }
         }
         return true;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
