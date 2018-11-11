@@ -1,13 +1,14 @@
 import java.awt.Color;
-
-
+/**
+ * Class for seam carver.
+ */
 public class SeamCarver {
     /**
-     * varaiable declaration.
+     * border variable.
      */
     private static final double BORDER = 1000;
     /**
-     * varaiable declaration.
+     * picture variable.
      */
     private Picture pic;
     
@@ -17,10 +18,8 @@ public class SeamCarver {
         }
         this.pic = new Picture(picture);
     }
-
-
     /**
-     * picture method.
+     * this is a picture method.
      *
      * @return picture.
      */
@@ -28,18 +27,16 @@ public class SeamCarver {
         return this.pic;
     }
     /**
-     * // width of current picture.
+     * width of current picture.
      *
      * @return width.
      */
-
-
     public int width() {
         return this.pic.width();
     }
 
     /**
-     * // height of current picture.
+     *  height of current picture.
      *
      * @return height of current picture.
      */
@@ -48,7 +45,7 @@ public class SeamCarver {
     }
 
     /**
-     * // energy of pixel at column x and row y.
+     * energy of pixel at column x and row y.
      *
      * @param      x  integer.
      * @param      y  integer.
@@ -67,7 +64,7 @@ public class SeamCarver {
     }
 
     /**
-     * // energy of pixel at column x and row y not on boarder
+     * // internal energy of pixel at column x and row y not on boarder
      *
      * @param      x  integer
      * @param      y  integer
@@ -82,7 +79,7 @@ public class SeamCarver {
         return Math.sqrt(gradient(left, right) + gradient(up, down));
     }    
     /**
-     * energy storage.
+     * energy storage function.
      *
      * @return  energies
      */
@@ -96,7 +93,7 @@ public class SeamCarver {
         return energies;
     }
     /**
-     * gradient method.
+     * this is a gradient method.
      *
      * @param      one   One
      * @param      two   Two
@@ -156,7 +153,7 @@ public class SeamCarver {
         return totalEnergies;
     }
     /**
-     * vertical path.
+     * this is a vertical path.
      *
      * @param      energies  The energies
      *
@@ -186,7 +183,7 @@ public class SeamCarver {
         return path;
     }
     /**
-     * // sequence of indices for horizontal seam.
+     * sequence of indices for horizontal seam.
      *
      * @return  // sequence of indices for horizontal seam.
      */
@@ -195,7 +192,7 @@ public class SeamCarver {
         return minVerticalPath(transposeEnergies);
     }
    /**
-    *  // sequence of indices for vertical seam.
+    *  sequence of indices for vertical seam.
     *
     * @return   // sequence of indices for vertical seam.
     */
@@ -250,7 +247,7 @@ public class SeamCarver {
         this.pic = pic;
     }
 
-    // return false if two consecutive entries differ by more than 1
+   
     private boolean isValid(final int[] a, final int len, final int range) {
         if (a.length != len || a[0] < 0 || a[0] > range) {
             return false;
