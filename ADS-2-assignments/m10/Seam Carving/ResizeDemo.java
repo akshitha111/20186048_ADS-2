@@ -2,7 +2,6 @@
  *  Compilation:  javac ResizeDemo.java
  *  Execution:    java ResizeDemo input.png columnsToRemove rowsToRemove
  *  Dependencies: SeamCarver.java SCUtility.java
- *                
  *
  *  Read image from file specified as command line argument. Use SeamCarver
  *  to remove number of rows and columns specified as command line arguments.
@@ -13,11 +12,25 @@
 import edu.princeton.cs.algs4.Picture;
 import edu.princeton.cs.algs4.StdOut;
 import edu.princeton.cs.algs4.Stopwatch;
-
+/**
+ * Class for resize demo.
+ */
 public class ResizeDemo {
+    /**
+     * Constructs the object.
+     */
+    protected ResizeDemo() {
+
+    }
+    /**
+     * { function_description }.
+     *
+     * @param      args  The arguments
+     */
     public static void main(String[] args) {
         if (args.length != 3) {
-            StdOut.println("Usage:\njava ResizeDemo [image filename] [num cols to remove] [num rows to remove]");
+            StdOut.println(
+        "Usage:\njava ResizeDemo [image filename] [num cols to remove] [num rows to remove]");
             return;
         }
 
@@ -25,7 +38,8 @@ public class ResizeDemo {
         int removeColumns = Integer.parseInt(args[1]);
         int removeRows = Integer.parseInt(args[2]); 
 
-        StdOut.printf("image is %d columns by %d rows\n", inputImg.width(), inputImg.height());
+        StdOut.printf("image is %d columns by %d rows\n",
+            inputImg.width(), inputImg.height());
         SeamCarver sc = new SeamCarver(inputImg);
 
         Stopwatch sw = new Stopwatch();
@@ -41,7 +55,7 @@ public class ResizeDemo {
         }
         Picture outputImg = sc.picture();
 
-        StdOut.printf("new image size is %d columns by %d rows\n", sc.width(), sc.height());
+        StdOut.printf("new image size is %d columns by %d rows\n",sc.width(), sc.height());
 
         StdOut.println("Resizing time: " + sw.elapsedTime() + " seconds.");
         inputImg.show();
