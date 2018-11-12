@@ -8,11 +8,12 @@ public final class Solution {
 		Scanner sc = new Scanner(System.in);
 		int n = Integer.parseInt(sc.nextLine());
 		String[] tokens = new String[n];
+		int w = tokens[0].length();
 		for (int i = 0; i < n; i++) {
 			tokens[i] = sc.nextLine();
 			//int w = tokens[i].length();
 			
-		}lsd.sort(tokens, 6);
+		}lsd.sort(tokens, w);
 		System.out.println(Arrays.toString(tokens));
 	}
 }
