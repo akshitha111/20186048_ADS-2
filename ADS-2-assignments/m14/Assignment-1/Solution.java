@@ -1,7 +1,20 @@
 import java.util.Scanner;
-
-public class Solution {
-	public static void main(String[] args) {
+/**
+ * Class for solution.
+ */
+public final class Solution {
+	/**
+	 * Constructs the object.
+	 */
+	private Solution() {
+		//unused constructor.
+	}
+	/**
+	 * { Client program }.
+	 *
+	 * @param      args  The arguments
+	 */
+	public static void main(final String[] args) {
 		String[] words = loadWords();
 		//Your code goes here...
 		TST<Integer> tst = new TST<Integer>();
@@ -20,8 +33,18 @@ public class Solution {
 
 	public static String[] loadWords() {
 		In in = new In("/Files/dictionary-algs4.txt");
-		//return in.readAllstrings();
 		String[] words = in.readAllStrings();
 		return words;
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
