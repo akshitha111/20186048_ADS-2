@@ -1,59 +1,28 @@
 import java.util.Arrays;
-
 /**
- *  The {@code SuffixArray} class represents a suffix array of a string of
- *  length <em>n</em>.
- *  It supports the <em>selecting</em> the <em>i</em>th smallest suffix,
- *  getting the <em>index</em> of the <em>i</em>th smallest suffix,
- *  computing the length of the <em>longest common prefix</em> between the
- *  <em>i</em>th smallest suffix and the <em>i</em>-1st smallest suffix,
- *  and determining the <em>rank</em> of a query string (which is the number
- *  of suffixes strictly less than the query string).
- *  <p>
- *  This implementation uses a nested class {@code Suffix} to represent
- *  a suffix of a string (using constant time and space) and
- *  {@code Arrays.sort()} to sort the array of suffixes.
- *  The <em>index</em> and <em>length</em> operations takes constant time
- *  in the worst case. The <em>lcp</em> operation takes time proportional to the
- *  length of the longest common prefix.
- *  The <em>select</em> operation takes time proportional
- *  to the length of the suffix and should be used primarily for debugging.
- *  <p>
- *  For alternate implementations of the same API, see
- *  {@link SuffixArrayX}, which is faster
- *  in practice (uses 3-way radix quicksort)
- *  and uses less memory (does not create {@code Suffix} objects)
- *  and <a href =
- *  "https://algs4.cs.princeton.edu/63suffix/SuffixArrayJava6.java.html">
- *  SuffixArrayJava6.java</a>,
- *  which relies on the constant-time substring extraction
- *   method that existed
- *  in Java 6.
- *  <p>
- *  For additional documentation, see
- *  <a href="https://algs4.cs.princeton.edu/63suffix">Section 6.3</a> of
- *  <i>Algorithms, 4th Edition</i> by Robert Sedgewick and Kevin Wayne.
+ * Class for suffix array.
  */
-public class SuffixArray {
+class SuffixArray {
     /**
-     * { var_description}.
+     * { var_description }.
      */
     private Suffix[] suffixes;
-
     /**
      * Initializes a suffix array for the given {@code text} string.
-     * @param text the input string
+     *
+     * @param      textt  the input string
      */
-    public SuffixArray(final String text) {
-        int n = text.length();
+    SuffixArray(final String textt) {
+        int n = textt.length();
         this.suffixes = new Suffix[n];
         for (int i = 0; i < n; i++) {
-            suffixes[i] = new Suffix(text, i);
+            suffixes[i] = new Suffix(textt, i);
         }
         Arrays.sort(suffixes);
     }
+
     /**
-     * { item_description }.
+     * Class for suffix.
      */
     private static final class Suffix implements Comparable<Suffix> {
         /**
@@ -67,12 +36,12 @@ public class SuffixArray {
         /**
          * Constructs the object.
          *
-         * @param      textOne   The text
-         * @param      indexOne  The index
+         * @param      textt   The text
+         * @param      indexx  The index
          */
-        private Suffix(final String textOne, final int indexOne) {
-            this.text = textOne;
-            this.index = indexOne;
+        private Suffix(final String textt, final int indexx) {
+            this.text = textt;
+            this.index = indexx;
         }
         /**
          * { function_description }.
@@ -101,7 +70,7 @@ public class SuffixArray {
          */
         public int compareTo(final Suffix that) {
             if (this == that) {
-                return 0;  // optimization
+                return 0;
             }
             int n = Math.min(this.length(), that.length());
             for (int i = 0; i < n; i++) {
@@ -123,26 +92,24 @@ public class SuffixArray {
             return text.substring(index);
         }
     }
-
     /**
      * Returns the length of the input string.
-     * @return the length of the input string
+     *
+     * @return     the length of the input string
      */
     public int length() {
         return suffixes.length;
     }
-
-
     /**
-     * Returns the index into the original
-     * string of the <em>i</em>th smallest suffix.
-     * That is, {@code text.substring(sa.index(i))} is
-     * the <em>i</em>th smallest suffix.
-     * @param i an integer between 0 and <em>n</em>-1
-     * @return the index into the original string of the
-     * <em>i</em>th smallest suffix
-     * @throws java.lang.IllegalArgumentException
-     * unless {@code 0 <= i < n}
+     * Returns the index into the original string of the <em>i</em>th smallest
+     * suffix. That is, {@code text.substring(sa.index(i))} is the <em>i</em>th
+     * smallest suffix.
+     *
+     * @param      i     an integer between 0 and <em>n</em>-1
+     *
+     * @return     the index into the original string of the <em>i</em>th
+     *             smallest suffix
+     * @throws     java.lang.IllegalArgumentException  unless {@code 0 <= i < n}
      */
     public int index(final int i) {
         if (i < 0 || i >= suffixes.length) {
@@ -155,10 +122,12 @@ public class SuffixArray {
     /**
      * Returns the length of the longest common prefix of the <em>i</em>th
      * smallest suffix and the <em>i</em>-1st smallest suffix.
-     * @param i an integer between 1 and <em>n</em>-1
-     * @return the length of the longest common prefix of the <em>i</em>th
-     * smallest suffix and the <em>i</em>-1st smallest suffix.
-     * @throws java.lang.IllegalArgumentException unless {@code 1 <= i < n}
+     *
+     * @param      i     an integer between 1 and <em>n</em>-1
+     *
+     * @return     the length of the longest common prefix of the <em>i</em>th
+     *             smallest suffix and the <em>i</em>-1st smallest suffix.
+     * @throws     java.lang.IllegalArgumentException  unless {@code 1 <= i < n}
      */
     public int lcp(final int i) {
         if (i < 1 || i >= suffixes.length) {
@@ -166,6 +135,7 @@ public class SuffixArray {
         }
         return lcpSuffix(suffixes[i], suffixes[i - 1]);
     }
+
     /**
      * { function_description }.
      *
@@ -186,9 +156,12 @@ public class SuffixArray {
 
     /**
      * Returns the <em>i</em>th smallest suffix as a string.
-     * @param i the index
-     * @return the <em>i</em> smallest suffix as a string
-     * @throws java.lang.IllegalArgumentException unless {@code 0 <= i < n}
+     *
+     * @param      i     the index
+     *
+     * @return     the <em>i</em> smallest suffix as a string
+     * @throws     java.lang.IllegalArgumentException
+     * unless {@code 0 <= i < n}
      */
     public String select(final int i) {
         if (i < 0 || i >= suffixes.length) {
@@ -196,19 +169,18 @@ public class SuffixArray {
         }
         return suffixes[i].toString();
     }
-
     /**
-     * Returns the number of suffixes strictly less
-     * than the {@code query} string.
-     * We note that {@code rank(select(i))} equals
-     * {@code i} for each {@code i}
-     * between 0 and <em>n</em>-1.
-     * @param query the query string
-     * @return the number of suffixes strictly less
-     * than {@code query}
+     * Returns the number of suffixes strictly less than the {@code query}
+     * string. We note that {@code rank(select(i))} equals {@code i} for each
+     * {@code i} between 0 and <em>n</em>-1.
+     *
+     * @param      query  the query string
+     *
+     * @return     the number of suffixes strictly less than {@code query}
      */
     public int rank(final String query) {
-        int lo = 0, hi = suffixes.length - 1;
+        int lo = 0;
+        int hi = suffixes.length - 1;
         while (lo <= hi) {
             int mid = lo + (hi - lo) / 2;
             int cmp = compare(query, suffixes[mid]);
@@ -217,12 +189,11 @@ public class SuffixArray {
             } else if (cmp > 0) {
                 lo = mid + 1;
             } else {
-            return mid;
+                return mid;
+            }
         }
-    }
         return lo;
     }
-
     /**
      * { function_description }.
      *
@@ -244,45 +215,3 @@ public class SuffixArray {
         return query.length() - suffix.length();
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

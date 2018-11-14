@@ -7,19 +7,17 @@ public final class Solution {
      * Constructs the object.
      */
     private Solution() {
-        //unused constructor.
     }
     /**
-     * { Client program }.
+     * { Client Program }.
      *
      * @param      args  The arguments
      */
     public static void main(final String[] args) {
         String[] words = loadWords();
-        //Your code goes here...
+        Scanner scan = new Scanner(System.in);
         TST<Integer> tst = new TST<Integer>();
-        Scanner sc = new Scanner(System.in);
-        String prefix = sc.nextLine();
+        String prefix = scan.nextLine();
         int j = 0;
         for (String word : words) {
             SuffixArray sa = new SuffixArray(word);
@@ -30,11 +28,12 @@ public final class Solution {
         for (String word : tst.keysWithPrefix(prefix)) {
             System.out.println(word);
         }
+        //Your code goes here...
     }
     /**
-     * Loads words.
+     * load words function.
      *
-     * @return     { words }.
+     * @return     { words are returned }.
      */
     public static String[] loadWords() {
         In in = new In("/Files/dictionary-algs4.txt");
@@ -42,20 +41,3 @@ public final class Solution {
         return words;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
