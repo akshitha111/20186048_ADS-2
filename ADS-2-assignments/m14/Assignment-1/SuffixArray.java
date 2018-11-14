@@ -4,7 +4,7 @@ import java.util.Arrays;
  */
 class SuffixArray {
     /**
-     * { var_description }.
+     * { suffixes array }.
      */
     private Suffix[] suffixes;
     /**
@@ -26,11 +26,11 @@ class SuffixArray {
      */
     private static final class Suffix implements Comparable<Suffix> {
         /**
-         * { var_description }.
+         * { text variable }.
          */
         private final String text;
         /**
-         * { var_description }.
+         * { index variable }.
          */
         private final int index;
         /**
@@ -44,7 +44,7 @@ class SuffixArray {
             this.index = indexx;
         }
         /**
-         * { function_description }.
+         * { length function }.
          *
          * @return     { description_of_the_return_value }
          */
@@ -52,7 +52,7 @@ class SuffixArray {
             return text.length() - index;
         }
         /**
-         * { function_description }.
+         * { charAt function }.
          *
          * @param      i     { parameter_description }
          *
@@ -62,7 +62,7 @@ class SuffixArray {
             return text.charAt(index + i);
         }
         /**
-         * { function_description }.
+         * { compareTo function }.
          *
          * @param      that  The that
          *

@@ -5,11 +5,11 @@
  */
 class TST<Value> {
     /**
-     * { var_description }.
+     * { n variable }.
      */
     private int n;
     /**
-     * { var_description }.
+     * { root variable }.
      */
     private Node<Value> root;
     /**
@@ -19,15 +19,15 @@ class TST<Value> {
      */
     private static class Node<Value> {
         /**
-         * { var_description }.
+         * { char c  }.
          */
         private char c;
         /**
-         * { item_description }.
+         * { node variable }.
          */
         private Node<Value> left, mid, right;
         /**
-         * { var_description }.
+         * { variable val }.
          */
         private Value val;
     }
