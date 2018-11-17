@@ -139,8 +139,6 @@ public final class Solution {
  * Class for t 9.
  */
 class T9 {
-   
-
     /**
      * { tst variable }.
      */
@@ -208,7 +206,7 @@ class T9 {
                     array.add(each);
                 }
             }
-        }//System.out.println(array);
+        } //System.out.println(array);
         Collections.sort(array);
         return array;
     }
@@ -226,6 +224,14 @@ class T9 {
         return getSuggestions(potentialWords(t9Signature), k);
     }
 }
+
+
+
+
+
+
+
+
 
 
 
