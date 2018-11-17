@@ -146,49 +146,93 @@ public class TST<Value> {
             IllegalArgumentException("key must have length >= 1");
         }
         Node<Value> x = get(root, key, 0);
-        if (x == null) return null;
+        if (x == null) {
+            return null;
+        }
         return x.val;
     }
 
-    // return subtrie corresponding to given key
-    private Node<Value> get(Node<Value> x, String key, int d) {
-        if (x == null) return null;
-        if (key.length() == 0) throw new
+    /**
+     * { function_description }.
+     *
+     * @param      x     { parameter_description }
+     * @param      key   The key
+     * @param      d     { parameter_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
+    private Node<Value> get(final Node<Value> x,
+        final String key, final int d) {
+        if (x == null) {
+            return null;
+        }
+        if (key.length() == 0) {
+            throw new
             IllegalArgumentException("key must have length >= 1");
+        }
         char c = key.charAt(d);
-        if      (c < x.c)              return get(x.left,  key, d);
-        else if (c > x.c)              return get(x.right, key, d);
-        else if (d < key.length() - 1) return get(x.mid,   key, d + 1);
-        else                           return x;
+        if      (c < x.c) {
+            return get(x.left,  key, d);
+        } else if (c > x.c) {
+            return get(x.right, key, d);
+        } else if (d < key.length() - 1) {
+            return get(x.mid,   key, d + 1);
+        } else {
+            return x;
+        }
     }
 
     /**
-     * Inserts the key-value pair into the symbol table, overwriting the old value
-     * with the new value if the key is already in the symbol table.
-     * If the value is {@code null}, this effectively deletes the key from the symbol table.
+     * Inserts the key-value pair into the symbol table,
+     * overwriting the old value
+     * with the new value if the key is already in the
+     * symbol table.
+     * If the value is {@code null}, this effectively deletes
+     * the key from the symbol table.
      * @param key the key
      * @param val the value
      * @throws IllegalArgumentException if {@code key} is {@code null}
      */
-    public void put(String key, Value val) {
+    public void put(final String key, final Value val) {
         if (key == null) {
             throw new IllegalArgumentException("calls put() with null key");
         }
-        if (!contains(key)) n++;
+        if (!contains(key)) {
+            n++;
+        }
         root = put(root, key, val, 0);
     }
-
-    private Node<Value> put(Node<Value> x, String key, Value val, int d) {
+    /**
+     * { function_description }.
+     *
+     * @param      x     { parameter_description }
+     * @param      key   The key
+     * @param      val   The value
+     * @param      d     { parameter_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
+    private Node<Value> put(final Node<Value> x,
+        final String key, final Value val, final int d) {
+        Node x1 = x;
         char c = key.charAt(d);
-        if (x == null) {
-            x = new Node<Value>();
-            x.c = c;
+        if (x1 == null) {
+            x1 = new Node<Value>();
+            x1.c = c;
         }
-        if      (c < x.c)               x.left  = put(x.left,  key, val, d);
-        else if (c > x.c)               x.right = put(x.right, key, val, d);
-        else if (d < key.length() - 1)  x.mid   = put(x.mid,   key, val, d + 1);
-        else                            x.val   = val;
-        return x;
+        if      (c < x1.c) {
+            x1.left  = put(x1.left,  key, val, d);
+        }
+        else if (c > x1.c) {
+            x1.right = put(x1.right, key, val, d);
+        }
+        else if (d < key.length() - 1) {
+            x1.mid   = put(x1.mid,   key, val, d + 1);
+        }
+        else {
+         x1.val   = val;
+        }
+        return x1;
     }
 
     /**
@@ -199,7 +243,7 @@ public class TST<Value> {
      *     or {@code null} if no such string
      * @throws IllegalArgumentException if {@code query} is {@code null}
      */
-    public String longestPrefixOf(String query) {
+    /*public String longestPrefixOf(String query) {
         if (query == null) {
             throw new IllegalArgumentException("calls longestPrefixOf() with null argument");
         }
@@ -218,7 +262,7 @@ public class TST<Value> {
             }
         }
         return query.substring(0, length);
-    }
+    }*/
 
     /**
      * Returns all keys in the symbol table as an {@code Iterable}.
