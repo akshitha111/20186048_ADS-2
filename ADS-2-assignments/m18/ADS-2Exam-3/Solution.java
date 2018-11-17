@@ -1,9 +1,23 @@
+/**
+ * { item_description }
+ */
 import java.util.Scanner;
-
-
+/**
+ * Class for solution.
+ */
 public class Solution {
-
+	/**
+	 * Constructs the object.
+	 */
+	private Solution() {
+		//unused constructor.
+	}
 	// Don't modify this method.
+	/**
+	 * { function_description }
+	 *
+	 * @param      args  The arguments
+	 */
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		String cases = scan.nextLine();
@@ -123,6 +137,7 @@ class T9 {
 
 	public Iterable<String> potentialWords(String t9Signature) {
 		// your code goes here
+		//System.out.println(tst.keysThatMatch(t9Signature));
 		return tst.keysThatMatch(t9Signature);
 	}
 
