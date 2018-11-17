@@ -196,13 +196,13 @@ class T9 {
     public Iterable<String>
     getSuggestions(final Iterable<String> words, final int k) {
         // your code goes here
-        MaxPQ<Integer> max = new MaxPQ<Integer>();
+        MaxPQ<Integer> maxPQ = new MaxPQ<Integer>();
         ArrayList<String> array = new ArrayList<String>();
         for (String word : words) {
-            max.insert(tst.get(word));
+            maxPQ.insert(tst.get(word));
         }
         for (int i = 0; i < k; i++) {
-            int flag = max.delMax();
+            int flag = maxPQ.delMax();
             for (String each : words) {
                 if (flag == tst.get(each)) {
                     array.add(each);
