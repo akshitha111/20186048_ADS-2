@@ -270,12 +270,12 @@ public class TST<Value> {
      * use the foreach notation: {@code for (Key key : st.keys())}.
      * @return all keys in the symbol table as an {@code Iterable}
      */
-    public Iterable<String> keys() {
+    /*public Iterable<String> keys() {
         Queue<String> queue = new Queue<String>();
         collect(root, new StringBuilder(), queue);
         return queue;
     }
-
+*/
     /**
      * Returns all of the keys in the set that start with {@code prefix}.
      * @param prefix the prefix
@@ -333,12 +333,12 @@ public class TST<Value> {
         if (c == '.' || c > x.c) collect(x.right, prefix, i, pattern, queue);
     }
 
-    public boolean hasPrefix(String prefix) {
+    /*public boolean hasPrefix(String prefix) {
         Node<Value> prefixNode = get(root, prefix, 0);
         if (prefixNode == null) return false;
         if (prefixNode.val != null) return true;
         if (prefixNode.left == null && prefixNode.mid == null &&
                 prefixNode.right == null) return false;
         return true;
-    }
+    }*/
 }

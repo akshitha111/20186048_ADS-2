@@ -219,12 +219,5 @@ Starting audit...
 [ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m18\ADS-2Exam-3\TST.java:327: 'if' construct must use '{}'s. [NeedBraces]
 [ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m18\ADS-2Exam-3\TST.java:327: Line is longer than 80 characters (found 99). [LineLength]
 [ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m18\ADS-2Exam-3\TST.java:333: 'if' construct must use '{}'s. [NeedBraces]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m18\ADS-2Exam-3\TST.java:336:5: Class 'TST' looks like designed for extension (can be subclassed), but the method 'hasPrefix' does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class 'TST' final or making the method 'hasPrefix' static/final/abstract/empty, or adding allowed annotation for the method. [DesignForExtension]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m18\ADS-2Exam-3\TST.java:336:5: Missing a Javadoc comment. [JavadocMethod]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m18\ADS-2Exam-3\TST.java:336:30: Parameter prefix should be final. [FinalParameters]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m18\ADS-2Exam-3\TST.java:338: 'if' construct must use '{}'s. [NeedBraces]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m18\ADS-2Exam-3\TST.java:339: 'if' construct must use '{}'s. [NeedBraces]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m18\ADS-2Exam-3\TST.java:340: 'if' construct must use '{}'s. [NeedBraces]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m18\ADS-2Exam-3\TST.java:340:63: '&&' should be on a new line. [OperatorWrap]
 Audit done.
-Checkstyle ends with 38 errors.
+Checkstyle ends with 31 errors.
