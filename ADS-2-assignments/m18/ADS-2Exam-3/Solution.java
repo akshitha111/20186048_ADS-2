@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Collections;
 /**
- * { item_description }
+ * { item_description }.
  */
 import java.util.Scanner;
 /**
