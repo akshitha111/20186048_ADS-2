@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.Collections;
 /**
  * { item_description }
  */
@@ -137,6 +139,7 @@ public final class Solution {
  * Class for t 9.
  */
 class T9 {
+   
 
     /**
      * { tst variable }.
@@ -178,10 +181,10 @@ class T9 {
     public Iterable<String> potentialWords(final String t9Signature) {
         // your code goes here
         //System.out.println(tst.keysThatMatch(t9Signature));
-        return tst.keysThatMatch(t9Signature);
+        return null;
     }
 
-     // return all possibilities(words), find top k with highest frequency.
+     // return all possibilities(words), find top k with highest flaguency.
     /**
      * Gets the suggestions.
      *
@@ -193,7 +196,21 @@ class T9 {
     public Iterable<String>
     getSuggestions(final Iterable<String> words, final int k) {
         // your code goes here
-        return null;
+        MaxPQ<Integer> max = new MaxPQ<Integer>();
+        ArrayList<String> array = new ArrayList<String>();
+        for (String word : words) {
+            max.insert(tst.get(word));
+        }
+        for (int i = 0; i < k; i++) {
+            int flag = max.delMax();
+            for (String each : words) {
+                if (flag == tst.get(each)) {
+                    array.add(each);
+                }
+            }
+        }//System.out.println(array);
+        Collections.sort(array);
+        return array;
     }
     // final output
     // Don't modify this method.
