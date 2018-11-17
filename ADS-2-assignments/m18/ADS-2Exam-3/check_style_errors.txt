@@ -376,19 +376,8 @@ Audit done.
 Checkstyle ends with 33 errors.
 Starting audit...
 [ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m18\ADS-2Exam-3\Solution.java:0: File does not end with a newline. [NewlineAtEndOfFile]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m18\ADS-2Exam-3\Solution.java:150:8: Parameter st should be final. [FinalParameters]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m18\ADS-2Exam-3\Solution.java:160:5: Missing a Javadoc comment. [JavadocMethod]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m18\ADS-2Exam-3\Solution.java:160:41: Parameter prefix should be final. [FinalParameters]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m18\ADS-2Exam-3\Solution.java:165:5: Missing a Javadoc comment. [JavadocMethod]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m18\ADS-2Exam-3\Solution.java:165:44: Parameter t9Signature should be final. [FinalParameters]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m18\ADS-2Exam-3\Solution.java:172:5: Missing a Javadoc comment. [JavadocMethod]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m18\ADS-2Exam-3\Solution.java:172:44: Parameter words should be final. [FinalParameters]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m18\ADS-2Exam-3\Solution.java:172:68: Parameter k should be final. [FinalParameters]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m18\ADS-2Exam-3\Solution.java:179:5: Missing a Javadoc comment. [JavadocMethod]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m18\ADS-2Exam-3\Solution.java:179:32: Parameter t9Signature should be final. [FinalParameters]
-[ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m18\ADS-2Exam-3\Solution.java:179:52: Parameter k should be final. [FinalParameters]
 Audit done.
-Checkstyle ends with 12 errors.
+Checkstyle ends with 1 errors.
 Starting audit...
 [ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m18\ADS-2Exam-3\TST.java:0: File does not end with a newline. [NewlineAtEndOfFile]
 [ERROR] C:\Users\akshitha\Desktop\20186048_ADS-2\ADS-2-assignments\m18\ADS-2Exam-3\TST.java:46: Line is longer than 80 characters (found 84). [LineLength]
