@@ -220,62 +220,17 @@ public class TST<Value> {
             x1 = new Node<Value>();
             x1.c = c;
         }
-        if      (c < x1.c) {
+        if (c < x1.c) {
             x1.left  = put(x1.left,  key, val, d);
-        }
-        else if (c > x1.c) {
+        } else if (c > x1.c) {
             x1.right = put(x1.right, key, val, d);
-        }
-        else if (d < key.length() - 1) {
+        } else if (d < key.length() - 1) {
             x1.mid   = put(x1.mid,   key, val, d + 1);
-        }
-        else {
+        } else {
          x1.val   = val;
         }
         return x1;
     }
-
-    /**
-     * Returns the string in the symbol table that is the longest prefix of {@code query},
-     * or {@code null}, if no such string.
-     * @param query the query string
-     * @return the string in the symbol table that is the longest prefix of {@code query},
-     *     or {@code null} if no such string
-     * @throws IllegalArgumentException if {@code query} is {@code null}
-     */
-    /*public String longestPrefixOf(String query) {
-        if (query == null) {
-            throw new IllegalArgumentException("calls longestPrefixOf() with null argument");
-        }
-        if (query.length() == 0) return null;
-        int length = 0;
-        Node<Value> x = root;
-        int i = 0;
-        while (x != null && i < query.length()) {
-            char c = query.charAt(i);
-            if      (c < x.c) x = x.left;
-            else if (c > x.c) x = x.right;
-            else {
-                i++;
-                if (x.val != null) length = i;
-                x = x.mid;
-            }
-        }
-        return query.substring(0, length);
-    }*/
-
-    /**
-     * Returns all keys in the symbol table as an {@code Iterable}.
-     * To iterate over all of the keys in the symbol table named {@code st},
-     * use the foreach notation: {@code for (Key key : st.keys())}.
-     * @return all keys in the symbol table as an {@code Iterable}
-     */
-    /*public Iterable<String> keys() {
-        Queue<String> queue = new Queue<String>();
-        collect(root, new StringBuilder(), queue);
-        return queue;
-    }
-*/
     /**
      * Returns all of the keys in the set that start with {@code prefix}.
      * @param prefix the prefix
