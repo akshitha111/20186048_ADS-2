@@ -91,13 +91,12 @@ public class Solution {
 		String[] dictionary = toReadFile(file);
 		for (int i = 0; i < dictionary.length; i++) {
 			String string = dictionary[i].toLowerCase();
-			if(st.contains(string)) {
-				st.put(string , st.get(string) + 1);
-			} else {
+			if(!(st.contains(string))) {
 				st.put(string, 1);
+			} else {
+				st.put(string , st.get(string) + 1);
 			}
-		}
-		
+		}		
 		return st;
 	}
 
@@ -105,19 +104,26 @@ public class Solution {
 
 class T9 {
 
+	private TST<Integer> tst;
+
 	public T9(BinarySearchST<String, Integer> st) {
 		// your code goes here
+		tst = new TST<Integer>();
+		for (String word : st.keys()) {
+			tst.put(word, st.get(word));
+		}
+
 	}
 
 	// get all the prefixes that match with given prefix.
 	public Iterable<String> getAllWords(String prefix) {
 		// your code goes here
-		return null;
+		return tst.keysWithPrefix(prefix);
 	}
 
 	public Iterable<String> potentialWords(String t9Signature) {
 		// your code goes here
-		return null;
+		return tst.keysThatMatch(t9Signature);
 	}
 
 	// return all possibilities(words), find top k with highest frequency.
