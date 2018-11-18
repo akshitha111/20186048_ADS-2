@@ -13,7 +13,7 @@ public class Solution {
 	}
 
 	/**
-	 * Main method.
+	 * Client program.
 	 *
 	 * @param      args  The arguments
 	 */
