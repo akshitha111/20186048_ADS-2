@@ -5,7 +5,6 @@ public class BoggleSolver {
 	// array of strings as the dictionary.
 	// (You can assume each word in the dictionary
 	//  contains only the uppercase letters A through Z.)
-
 	private TrieST<Integer> dictionaryTrie;
 	private Set<String> validWords;
 	private boolean[][] marked;
@@ -50,7 +49,6 @@ public class BoggleSolver {
 		}
 		return dictionaryTrie.contains(word);
 	}
-
 	public void dfs(final BoggleBoard board, final boolean[][] marked,
 	                final int rows, final int cols, final String word) {
 		if (!dictionaryTrie.hasPrefix(word)) {
